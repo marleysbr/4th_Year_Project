@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.marleysbr.TestApp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+    <preference name="SplashScreen" value="www/img/logo.png" />
+    <preference name="SplashScreenDelay" value="100000" />
+
+    <name>Test App</name>
+    <description>
+        A sample Cordova application that uses JQuery Mobile
+    </description>
+    <author email="marleysbr@gmail.com" href="http://facebook.com/marleyscr10">
+        Marleys
+    </author>
+
+    <content src="index.html" />
+    <access origin="*" />
+
+    <!-- uses cordova plugin add org.apache.cordova.statusbar to make iOS7 statusbar look right-->
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <!-- edit this to the background color of your app -->
+    <preference name="StatusBarBackgroundColor" value="#595b5b" />
+
+
+
+</widget>
