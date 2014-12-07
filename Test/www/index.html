@@ -23,7 +23,7 @@
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
     <script type="text/javascript"
-            src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCgU5UbKO5atwyiEiid3yUv9P6KkQERy2E&sensor=false">
+            src="http://maps.googleapis.com/maps/api/js?sensor=false">
     </script>
 </head>
 
@@ -45,10 +45,27 @@
 
     <div data-role="panel" id="menu">
         <ul data-role="listview" data-inset="true" class="ui-alt-icon">
-                <li><a href="#">Take a picture</a></li>
+                <li><a href="#camera">Take a picture</a></li>
                 <li><a href="#map">View Map</a></li>
                 <li><a href="#">About</a></li>
         </ul>
+    </div>
+
+</div>
+
+<div data-role="page" id="camera">
+
+    <div data-role="header" data-position="fixed">
+        <h1>Take a Picture</h1><a href="#home" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
+    </div>
+
+    <div class="ui-content" role="main">
+
+        <button onclick="takePicture();">New picture</button>
+        <button onclick="useExistingPhoto();">Select from Gallery</button>
+
+        <img src="" id="smallImage">
+
     </div>
 
 </div>
@@ -67,9 +84,11 @@
 
 </div>
 
+<script type="text/javascript" src="../platform/js/libs/cordova.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="lib/fastclick/js/fastclick.js"></script>
 <script type="text/javascript" src="lib/handlebars/js/handlebars-v1.3.0.js"></script>
+<script type="text/javascript" src="js/MobileServices.Web-1.2.5.js"></script>
 
 </body>
 </html>
