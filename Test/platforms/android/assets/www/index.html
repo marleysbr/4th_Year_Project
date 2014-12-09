@@ -61,12 +61,18 @@
 
     <div class="ui-content" role="main">
 
+        <p><b>Status:</b> <span id="camera_status"></span></p>
+        <p> <b>Image:</b>     <img style="width:200px; visibility:hidden; display:none;" id="camera_image" src="" /> </p>
+
         <button onclick="takePicture();">New picture</button>
         <button onclick="useExistingPhoto();">Select from Gallery</button>
-
-        <img src="" id="smallImage">
+        <button onclick="uploadPicture();">Upload picture</button>
 
     </div>
+
+    <button onclick="viewUploadedPictures();">View uploaded pictures</button>
+    <img style="width:200px; visibility:hidden; display:none;" id="server_images" src="" />
+
 
 </div>
 

@@ -12,6 +12,12 @@ http://metabates.com/2012/04/15/capturing-and-uploading-photos-on-ios-with-phone
 Upload a Picture using PhoneGap on Android
 https://www.ibm.com/developerworks/community/blogs/94e7fded-7162-445e-8ceb-97a2140866a9/entry/upload_a_picture_using_phonegap_on_android8?lang=en
 
+PhoneGap 7 - Using Device Functions - Uploading Pictures To A Server
+https://www.youtube.com/watch?v=2EjXEfTMHp0
+
+Phonegap tutorials
+https://www.youtube.com/channel/UCgKJ5U8Ryp-HUwsddvB1lQQ
+
 Camera API
 https://www.youtube.com/watch?v=H3lNDQN1g5E
 
@@ -20,3 +26,6 @@ https://www.google.ie/search?q=add+database+phonegap&rlz=1C1CHWA_enIE604IE604&oq
 
 Phonegap: How to Integrate Database in Android using Phonegap 3 - Tutorial 7
 https://www.youtube.com/watch?v=NCIdKSeRD-E
+
+Server for upload:
+http://31.170.160.101/root/public_html/upload.php
