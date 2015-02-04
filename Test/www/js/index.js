@@ -16,6 +16,21 @@ appomat.app = {
 
 };
 
+function showChurches() {
+
+    var jqxhr = $.ajax({ url: "http://marlan4thyearproject.comli.com/showChurches.php" })
+        .success(function() {
+            document.getElementById("txtHint").innerHTML = jqxhr.responseText;
+        })
+        .error(function() {
+            alert("error");
+        })
+        .complete(function() {});
+
+
+
+}
+
 function showUser() {
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari

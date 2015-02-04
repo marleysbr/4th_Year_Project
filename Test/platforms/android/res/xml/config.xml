@@ -23,11 +23,13 @@
     <feature name="FileTransfer">
         <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
     </feature>
+    <icon height="80" src="www/img/logo.png" width="80" />
+    <splash height="480" src="www/img/logo.png" width="320" />
     <preference name="SplashScreen" value="www/img/logo.png" />
     <preference name="SplashScreenDelay" value="100000" />
-    <name>Test App</name>
+    <name>Church Locator</name>
     <description>
-        A sample Cordova application that uses JQuery Mobile
+        An app that locates Churches.
     </description>
     <author email="marleysbr@gmail.com" href="http://facebook.com/marleyscr10">
         Marleys

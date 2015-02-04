@@ -4,9 +4,9 @@
     <preference name="SplashScreen" value="www/img/logo.png" />
     <preference name="SplashScreenDelay" value="100000" />
 
-    <name>Test App</name>
+    <name>Church Locator</name>
     <description>
-        A sample Cordova application that uses JQuery Mobile
+        An app that locates Churches.
     </description>
     <author email="marleysbr@gmail.com" href="http://facebook.com/marleyscr10">
         Marleys
@@ -20,6 +20,9 @@
     <!-- edit this to the background color of your app -->
     <preference name="StatusBarBackgroundColor" value="#595b5b" />
 
-
+    <platform name="android">
+        <icon src="www/img/logo.png" width="80" height="80" />
+        <splash src="www/img/logo.png" width="320" height="480"/>
+    </platform>
 
 </widget>
