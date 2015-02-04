@@ -12,14 +12,26 @@ appomat.app = {
         FastClick.attach(document.body);
         pictureSource = navigator.camera.PictureSourceType;
         destinationType = navigator.camera.DestinationType;
-
-        var client = new WindowsAzure.MobileServiceClient('https://marleystestproject.azure-mobile.net/', 'MqLCLoCvUPrfjwWBclEQzUaemoqXlh74');
-
-        var itemTable = client.getTable('Item');
-
-        itemTable.insert("Test");
     }
+
 };
+
+function showUser() {
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("GET","http://marlan4thyearproject.comli.com/getChurches.php",true);
+    xmlhttp.send();
+}
 
 function takePicture() {
     navigator.camera.getPicture(
@@ -59,7 +71,7 @@ function uploadPicture() {
 
     document.getElementById('camera_status').innerHTML = "Uploading...";
 
-    var server = "http://marlancardoso4thyearproject.webatu.com/upload.php";
+    var server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
     if (server) {
         var options = new FileUploadOptions();
             options.fileKey="file";
@@ -77,7 +89,7 @@ function uploadPicture() {
 }
 
 function viewUploadedPictures() {
-    var server = "http://marlancardoso4thyearproject.webatu.com/upload.php";
+    var server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
     if (server)
     {
     var xmlhttp = new XMLHttpRequest();

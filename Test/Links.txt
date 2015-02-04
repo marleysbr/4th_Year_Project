@@ -29,3 +29,6 @@ https://www.youtube.com/watch?v=NCIdKSeRD-E
 
 Server for upload:
 http://31.170.160.101/root/public_html/upload.php
+
+Database - Cordova
+https://iphonedevlog.wordpress.com/2014/03/28/populate-your-phonegap-app-with-data-from-an-external-server-db/

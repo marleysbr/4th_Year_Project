@@ -6,7 +6,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
 
-    <title>Test App</title>
+    <title>Church Locator</title>
 
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.0.min.css" />
@@ -32,7 +32,7 @@
 <div data-role="page" id="home">
 
     <div data-role="header" data-position="fixed" style="min-height: 50px">
-        <h1>Hello World</h1>
+        <h1>Church Locator</h1>
         <a href="#menu" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left">Menu</a>
     </div>
 
@@ -46,7 +46,8 @@
     <div data-role="panel" id="menu">
         <ul data-role="listview" data-inset="true" class="ui-alt-icon">
                 <li><a href="#camera">Take a picture</a></li>
-                <li><a href="#map">View Map</a></li>
+                <li><a href="#map">View Map</a></li></br>
+                <li><a href="#listOfChurches">List of Churches</a></li>
                 <li><a href="#">About</a></li>
         </ul>
     </div>
@@ -75,6 +76,21 @@
 
 
 </div>
+
+<div data-role="page" id="listOfChurches">
+    <div data-role="header" data-position="fixed">
+        <h1>List of Churches</h1><a href="#home" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
+    </div>
+
+    <div class="ui-content" role="main">
+
+        <button onclick="showUser();">Show Churches</button>
+        <div id="txtHint"><b>Person info will be listed here...</b></div>
+
+    </div>
+
+</div>
+
 
 <div data-role="page" id="map">
 
