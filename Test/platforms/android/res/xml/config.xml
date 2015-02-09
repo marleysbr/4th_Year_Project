@@ -36,6 +36,8 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <access origin="http://31.170.160.87*" />
+    <access origin="http://marlan4thyearproject.comli.com/" subdomains="true" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#595b5b" />
 </widget>

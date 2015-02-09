@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -18,12 +20,17 @@
     -->
 
     <script type="text/javascript" src="js/index.js"></script>
-
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
     <script type="text/javascript"
             src="http://maps.googleapis.com/maps/api/js?sensor=false">
+    </script>
+    <script>
+        $(document).bind("mobileinit", function(){
+            $.mobile.allowCrossDomainPages = true;
+        });
     </script>
 </head>
 
@@ -84,13 +91,46 @@
 
     <div class="ui-content" role="main">
 
-        <button onclick="showChurches();">Show All Churches ( JSON )</button>
+       <button onclick="getChurches();">Show All Churches</button>
+        <br/>
 
-        <button onclick="showUser();">Show All Churches ( CORS )</button>
-        <div id="txtHint"></div>
+        <div id="resultSet">
+            <form class="ui-filterable">
+                <input id="filter" data-type="search" placeholder="Search for Churches">
+            </form>
+            <ul id="result_list" data-filter="true" data-input="#filter" data-role="listview">
+            </ul>
+        </div>
+
+
 
     </div>
 
+</div>
+
+<div data-role="page" id="churchDetails">
+    <div data-role="header" data-position="fixed">
+        <h1>Church Details</h1><a href="#home" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
+    </div>
+
+    <div class="ui-content" role="main">
+
+        <a href="#listOfChurches" data-transition="slide" data-direction="reverse"> Return to List </a>
+        <div id="details">
+            <div>
+                <div id="churchDetail">
+                    <h3 id="churchName"></h3>
+                    <p><strong>Address:</strong> <p id="churchAddress">
+                    <p><strong>City:</strong> <p id="churchCity"></p></p>
+                    <p><strong>County:</strong> <p id="churchCounty"></p></p>
+                    <p><strong>Telephone:</strong> <p id="churchTelephone"></p></p>
+                    <p><strong>Weekday Masses:</strong> <p id="churchWeekdayMass"></p></p>
+                    <p><strong>Weekend Masses:</strong> <p id="churchWeekendMass"></p></p>
+                </div>
+            </div>
+        </div>
+        <button onclick="">Show on Map</button>
+    </div>
 </div>
 
 

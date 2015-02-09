@@ -35,3 +35,6 @@ https://iphonedevlog.wordpress.com/2014/03/28/populate-your-phonegap-app-with-da
 
 Database - PHP - Cordova
 http://www.jqwidgets.com/jquery-widgets-documentation/documentation/phpintegration/bind-jquery-dropdownlist-to-mysql-database-using-php.htm
+
+Loading Data into Phonegap
+http://samcroft.co.uk/2010/loading-data-into-a-phonegap-app/

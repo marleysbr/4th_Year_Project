@@ -19,33 +19,82 @@ appomat.app = {
 function showChurches() {
 
     var jqxhr = $.ajax({ url: "http://marlan4thyearproject.comli.com/showChurches.php" })
-        .success(function() {
-            document.getElementById("txtHint").innerHTML = jqxhr.responseText;
+        .success(function(data) {
+            document.getElementById("txtHint").innerHTML = data;
+            console.log(JSON.parse((data)));
+            alert("OK");
         })
         .error(function() {
             alert("error");
         })
         .complete(function() {});
+}
 
+function getChurches() {
 
+    if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    }
+    else {  // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.async = false;
+    xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/xmlDatabase.php", false);
+    xmlhttp.send();
+    xmlDoc = xmlhttp.responseXML;
+
+    churchLength = xmlDoc.getElementsByTagName("Church").length;
+
+    for(i = 0; i < churchLength; i++) {
+
+        churchID = xmlDoc.getElementsByTagName("id")[i].childNodes[0].nodeValue;
+        churchName = xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue;
+        churchCity = xmlDoc.getElementsByTagName("city")[i].childNodes[0].nodeValue;
+        churchCounty = xmlDoc.getElementsByTagName("county")[i].childNodes[0].nodeValue;
+
+        $("#result_list").append("<li id=" +churchID+ " class='test'><a href='#churchDetails'>" + churchName + " - " + churchCity +" (" + churchCounty + ")</a></li>");
+
+        $("#result_list").listview("refresh");
+
+    }
+
+    $('.test').click(function() {
+        getDetails($(this).attr("id"));
+    });
 
 }
 
-function showUser() {
-    if (window.XMLHttpRequest) {
-        // code for IE7+, Firefox, Chrome, Opera, Safari
+function getDetails(id) {
+
+    if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
-    } else {
-        // code for IE6, IE5
+    }
+    else {  // code for IE6, IE5
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
-        }
-    }
-    xmlhttp.open("GET","http://marlan4thyearproject.comli.com/getChurches.php",true);
+    xmlhttp.async = false;
+    xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/xmlChurch.php?id=" +id, false);
     xmlhttp.send();
+    xmlDoc = xmlhttp.responseXML;
+
+    churchID = xmlDoc.getElementsByTagName("id")[0].childNodes[0].nodeValue;
+    churchName = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+    churchAddress = xmlDoc.getElementsByTagName("address")[0].childNodes[0].nodeValue;
+    churchCity = xmlDoc.getElementsByTagName("city")[0].childNodes[0].nodeValue;
+    churchCounty = xmlDoc.getElementsByTagName("county")[0].childNodes[0].nodeValue;
+    churchTelephone = xmlDoc.getElementsByTagName("telephone")[0].childNodes[0].nodeValue;
+    churchCoordinates = xmlDoc.getElementsByTagName("coordinates")[0].childNodes[0].nodeValue;
+    churchWeekdayMass = xmlDoc.getElementsByTagName("weekdayMass")[0].childNodes[0].nodeValue;
+    churchWeekendMass = xmlDoc.getElementsByTagName("weekendMass")[0].childNodes[0].nodeValue;
+
+    document.getElementById('churchName').innerHTML = churchName;
+    document.getElementById('churchAddress').innerHTML = churchAddress;
+    document.getElementById('churchCity').innerHTML = churchCity;
+    document.getElementById('churchCounty').innerHTML = churchCounty;
+    document.getElementById('churchTelephone').innerHTML = churchTelephone;
+    document.getElementById('churchWeekdayMass').innerHTML = churchWeekdayMass;
+    document.getElementById('churchWeekendMass').innerHTML = churchWeekendMass;
+
 }
 
 function takePicture() {
