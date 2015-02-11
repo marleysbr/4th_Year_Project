@@ -36,18 +36,31 @@
 
 <body>
 
+<script>
+    $( document ).on( "pageinit", "#home", function() {
+        $( document ).on( "swipeleft swiperight", "#home", function( e ) {
+            if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+                if ( e.type === "swipeleft"  ) {
+                    $( "#menu" ).panel( "open" );
+                } else if ( e.type === "swiperight" ) {
+                    $( "#menu" ).panel( "open" );
+                }
+            }
+        });
+    });
+</script>
+
 <div data-role="page" id="home">
 
-    <div data-role="header" data-position="fixed" style="min-height: 50px">
+    <div data-role="header" data-position="fixed">
         <h1>Church Locator</h1>
         <a href="#menu" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left">Menu</a>
     </div>
 
     <div class="ui-content" role="main">
-        <p>• Use the menu to view options</p>
-        <p>• Only View Map working at the moment</p>
-        <p>----- This app will get your location and then center the map based on your location</p>
-        <p>• JQueryMobile and FastClick were implemented on this solution</p>
+
+        <button onclick="getLocation();">Show Map</button>
+
     </div>
 
     <div data-role="panel" id="menu">
@@ -126,12 +139,27 @@
                     <p><strong>Telephone:</strong> <p id="churchTelephone"></p></p>
                     <p><strong>Weekday Masses:</strong> <p id="churchWeekdayMass"></p></p>
                     <p><strong>Weekend Masses:</strong> <p id="churchWeekendMass"></p></p>
+                    <div id="changeCoordinates"></div>
                 </div>
             </div>
         </div>
-        <button onclick="">Show on Map</button>
     </div>
 </div>
+
+<div data-role="page" id="mapWithChurch">
+
+    <div data-role="header" data-position="fixed">
+        <h1>Map</h1><a href="#churchDetails" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
+    </div>
+
+    <div class="ui-content" role="main" id="map_canvas1">
+
+
+
+    </div>
+
+</div>
+
 
 
 <div data-role="page" id="map">
@@ -142,7 +170,8 @@
 
     <div class="ui-content" role="main" id="map_canvas">
 
-        <script>getLocation()</script>
+        <br /><br /><br />
+        <button onclick="getLocation();">Show Map</button>
 
     </div>
 

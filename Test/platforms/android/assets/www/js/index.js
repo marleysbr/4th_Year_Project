@@ -95,6 +95,11 @@ function getDetails(id) {
     document.getElementById('churchWeekdayMass').innerHTML = churchWeekdayMass;
     document.getElementById('churchWeekendMass').innerHTML = churchWeekendMass;
 
+    churchLat = churchCoordinates.split(',')[0].split(' ').pop();
+    churchLong = churchCoordinates.substr(churchCoordinates.indexOf(",") + 1);
+    churchLong = churchLong.replace(/\s+/g, '');
+
+    document.getElementById('changeCoordinates').innerHTML = '<button onclick="redirectToChurchMap();">Show on Map</button>';
 }
 
 function takePicture() {
@@ -172,10 +177,10 @@ function viewUploadedPictures() {
 
 function getLocation() {
     navigator.geolocation.getCurrentPosition(showMap, onError, {enableHighAccuracy: true});
+    window.location = "#map";
 }
 
 function showMap(position) {
-
     var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
     var mapOptions = {
@@ -183,7 +188,14 @@ function showMap(position) {
         zoom: 16,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
+
     var map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
+
+    google.maps.event.addListenerOnce(map, 'idle', function() {
+        var center = map.getCenter();
+        google.maps.event.trigger(map, 'resize');
+        map.setCenter(center);
+    });
 
     var marker = new google.maps.Marker({
         position: myLatLng,
@@ -198,5 +210,38 @@ function showMap(position) {
 function onError(error) {
     alert('code: '    + error.code    + '\n' +
     'message: ' + error.message + '\n');
+}
+
+function redirectToChurchMap() {
+    showMapChurch(churchLat, churchLong);
+    window.location = "#mapWithChurch";
+}
+
+function showMapChurch(lat, long) {
+
+    var myLatLng = new google.maps.LatLng(lat, long);
+
+    var mapOptions = {
+        center: myLatLng,
+        zoom: 16,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var map = new google.maps.Map(document.getElementById("map_canvas1"),mapOptions);
+
+    google.maps.event.addListenerOnce(map, 'idle', function() {
+        var center = map.getCenter();
+        google.maps.event.trigger(map, 'resize');
+        map.setCenter(center);
+    });
+
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        animation: google.maps.Animation.DROP,
+        title: "You are here!"
+    });
+
+    marker.setMap(map);
 }
 
