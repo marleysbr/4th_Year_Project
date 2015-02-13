@@ -16,3 +16,85 @@ body {
     top:0; right:0;
     bottom:0; left:0;
 }
+
+#listMenuChurches {
+    right: 0; left: 0;
+    top: 15px;
+    width: 100%; height: 125px; position: absolute;
+    background-image: url("../img/church.png");
+    background-size: 100%;
+    border-width: thin;
+    border-style: solid; border-color: #828282;
+    text-align: center;
+    font-size: 25px;
+    line-height: 125px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #000000;
+    text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+#listMenuMap {
+    right: 0; left: 0;
+    top: 141px;
+    width: 100%; height: 125px; position: absolute;
+    background-image: url("../img/map.png");
+    background-size: 100%;
+    border-width: thin;
+    border-style: solid; border-color: #828282;
+    text-align: center;
+    font-size: 25px;
+    line-height: 125px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #000000;
+    text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+#listMenuMass {
+    right: 0; left: 0;
+    top: 266px;
+    width: 100%; height: 125px; position: absolute;
+    background-image: url("../img/mass.png");
+    background-size: 100%;
+    border-width: thin;
+    border-style: solid; border-color: #828282;
+    text-align: center;
+    font-size: 25px;
+    line-height: 125px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #000000;
+    text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+
+#listMenuPicture {
+    right: 0; left: 0;
+    top: 391px;
+    width: 100%; height: 125px; position: absolute;
+    background-image: url("../img/picture.png");
+    background-size: 100%;
+    border-width: thin;
+    border-style: solid; border-color: #828282;
+    text-align: center;
+    font-size: 25px;
+    line-height: 125px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #000000;
+    text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+#listMenuAbout {
+    right: 0; left: 0;
+    top: 516px;
+    width: 100%; height: 125px; position: absolute;
+    background-image: url("../img/about.png");
+    background-size: 100%;
+    border-width: thin;
+    border-style: solid; border-color: #828282;
+    text-align: center;
+    font-size: 25px;
+    line-height: 125px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #000000;
+    text-shadow: 1px 1px 1px #FFFFFF;
+}
+

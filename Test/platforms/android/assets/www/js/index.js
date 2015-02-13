@@ -177,7 +177,6 @@ function viewUploadedPictures() {
 
 function getLocation() {
     navigator.geolocation.getCurrentPosition(showMap, onError, {enableHighAccuracy: true});
-    window.location = "#map";
 }
 
 function showMap(position) {
