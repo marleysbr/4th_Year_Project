@@ -196,13 +196,59 @@ function showMap(position) {
         map.setCenter(center);
     });
 
+    if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    }
+    else {  // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.async = false;
+    xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/xmlDatabase.php", false);
+    xmlhttp.send();
+    xmlDoc = xmlhttp.responseXML;
+
+    churchLength = xmlDoc.getElementsByTagName("Church").length;
+
+    for(i = 0; i < churchLength; i++) {
+        churchID = xmlDoc.getElementsByTagName("id")[0].childNodes[0].nodeValue;
+        churchName = xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue;
+        churchCoords = xmlDoc.getElementsByTagName("coordinates")[i].childNodes[0].nodeValue;
+
+        churchLat = churchCoords.split(',')[0].split(' ').pop();
+        churchLong = churchCoords.substr(churchCoords.indexOf(",") + 1);
+        churchLong = churchLong.replace(/\s+/g, '');
+
+        var churchLatLog = new google.maps.LatLng(churchLat, churchLong);
+
+        var marker = new google.maps.Marker({
+            position: churchLatLog,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title: churchName
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            window.location.href = "#churchDetailsFromMap";
+        });
+
+    }
+
+    var infowindow = new google.maps.InfoWindow({
+        content: "You are here"
+    });
+
     var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
+        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
         animation: google.maps.Animation.DROP,
         title: "You are here!"
     });
-    marker.setMap(map);
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map,marker);
+    });
+
 }
 
 
