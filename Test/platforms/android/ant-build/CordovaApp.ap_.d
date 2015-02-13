@@ -45,6 +45,7 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\map.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\mass.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\picture.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\readings.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\js\index.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\js\MobileServices.Web-1.2.5.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\lib\fastclick \
