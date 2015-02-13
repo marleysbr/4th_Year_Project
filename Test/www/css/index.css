@@ -19,7 +19,7 @@ body {
 
 #listMenuChurches {
     right: 0; left: 0;
-    top: 15px;
+    top: 5px;
     width: 100%; height: 125px; position: absolute;
     background-image: url("../img/church.png");
     background-size: 100%;
@@ -35,7 +35,7 @@ body {
 
 #listMenuMap {
     right: 0; left: 0;
-    top: 141px;
+    top: 131px;
     width: 100%; height: 125px; position: absolute;
     background-image: url("../img/map.png");
     background-size: 100%;
@@ -51,7 +51,7 @@ body {
 
 #listMenuMass {
     right: 0; left: 0;
-    top: 266px;
+    top: 256px;
     width: 100%; height: 125px; position: absolute;
     background-image: url("../img/mass.png");
     background-size: 100%;
@@ -68,7 +68,7 @@ body {
 
 #listMenuPicture {
     right: 0; left: 0;
-    top: 391px;
+    top: 381px;
     width: 100%; height: 125px; position: absolute;
     background-image: url("../img/picture.png");
     background-size: 100%;
@@ -84,7 +84,7 @@ body {
 
 #listMenuAbout {
     right: 0; left: 0;
-    top: 516px;
+    top: 506px;
     width: 100%; height: 125px; position: absolute;
     background-image: url("../img/about.png");
     background-size: 100%;
