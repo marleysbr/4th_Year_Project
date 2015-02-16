@@ -64,6 +64,50 @@ function getChurches() {
 
 }
 
+function takePicture() {
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.FILE_URI });
+}
+
+function getPicture() {
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.FILE_URI,
+        sourceType : Camera.PictureSourceType.PHOTOLIBRARY });
+}
+
+function uploadImage(imageData) {
+    var serverURL = "http://marlan4thyearproject.comli.com/uploadPicture.php";
+    var options = new FileUploadOptions();
+    options.fileKey = 'file';
+    options.fileName = imageData.substr(imageData.lastIndexOf('/')+1);
+    options.mimeType = "image/jpeg";
+
+    var ft = new FileTransfer();
+    ft.upload(imageData, serverURL, onUploadSuccess, onUploadFail, options);
+}
+
+function onUploadSuccess() {
+    alert("Picture uploaded");
+}
+
+function onUploadFail() {
+    alert("Picture Upload Failed");
+}
+
+function onSuccess(imageData) {
+    var image = document.getElementById('camera_image');
+    image.src = imageData;
+    alert(image.src);
+    uploadImage(imageData);
+
+    server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
+
+}
+
+function onFail(message) {
+    alert('Failed because ' +message);
+}
+
 function getDetails(id) {
 
     if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -102,84 +146,52 @@ function getDetails(id) {
     document.getElementById('changeCoordinates').innerHTML = '<button onclick="redirectToChurchMap();">Show on Map</button>';
 }
 
-function takePicture() {
-    navigator.camera.getPicture(
-        function(uri) {
-            var img = document.getElementById('camera_image');
-            img.style.visibility = "visible";
-            img.style.display = "block";
-            img.src = uri;
-            document.getElementById('camera_status').innerHTML = "Success";
-        }, function(e) {
-            console.log("Error getting picture: " + e);
-            document.getElementById('camera_status').innerHTML = "Error getting picture."; },
-        { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI, correctOrientation: true});
-};
+function getDetailsFromMap(id) {
 
-function useExistingPhoto() {
-    navigator.camera.getPicture(
-        function(uri) {
-            var img = document.getElementById('camera_image');
-            img.style.visibility = "visible";
-            img.style.display = "block";
-            img.src = uri;
-            document.getElementById('camera_status').innerHTML = "Success";
-        }, function(e) {
-            console.log("Error getting picture: " + e);
-            document.getElementById('camera_status').innerHTML = "Error getting picture."; },
-    { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY} );
-};
-
-function uploadPicture() {
-    var img = document.getElementById('camera_image');
-    var imageURI = img.src;
-    if (!imageURI || (img.style.display == "none")) {
-        document.getElementById('camera_status').innerHTML = "Take picture or select picture from library first.";
-        return;
+    if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
     }
-
-    document.getElementById('camera_status').innerHTML = "Uploading...";
-
-    var server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
-    if (server) {
-        var options = new FileUploadOptions();
-            options.fileKey="file";
-            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-            options.mimeType="image/jpeg";
-            options.chunkedMode = false;
-
-            var ft = new FileTransfer();
-            ft.upload(imageURI, server, function(r) {
-                document.getElementById('camera_status').innerHTML = "Upload successful: "+ r.bytesSent+" bytes uploaded.";
-            }, function(error) {
-                document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+ error.code;
-            }, options);
+    else {  // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
+    xmlhttp.async = false;
+    xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/xmlChurch.php?id=" +id, false);
+    xmlhttp.send();
+    xmlDoc = xmlhttp.responseXML;
+
+    churchID = xmlDoc.getElementsByTagName("id")[0].childNodes[0].nodeValue;
+    churchName = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+    churchAddress = xmlDoc.getElementsByTagName("address")[0].childNodes[0].nodeValue;
+    churchCity = xmlDoc.getElementsByTagName("city")[0].childNodes[0].nodeValue;
+    churchCounty = xmlDoc.getElementsByTagName("county")[0].childNodes[0].nodeValue;
+    churchTelephone = xmlDoc.getElementsByTagName("telephone")[0].childNodes[0].nodeValue;
+    churchCoordinates = xmlDoc.getElementsByTagName("coordinates")[0].childNodes[0].nodeValue;
+    churchWeekdayMass = xmlDoc.getElementsByTagName("weekdayMass")[0].childNodes[0].nodeValue;
+    churchWeekendMass = xmlDoc.getElementsByTagName("weekendMass")[0].childNodes[0].nodeValue;
+
+    document.getElementById('churchName1').innerHTML = churchName;
+    document.getElementById('churchAddress1').innerHTML = churchAddress;
+    document.getElementById('churchCity1').innerHTML = churchCity;
+    document.getElementById('churchCounty1').innerHTML = churchCounty;
+    document.getElementById('churchTelephone1').innerHTML = churchTelephone;
+    document.getElementById('churchWeekdayMass1').innerHTML = churchWeekdayMass;
+    document.getElementById('churchWeekendMass1').innerHTML = churchWeekendMass;
+
+    churchLat = churchCoordinates.split(',')[0].split(' ').pop();
+    churchLong = churchCoordinates.substr(churchCoordinates.indexOf(",") + 1);
+    churchLong = churchLong.replace(/\s+/g, '');
+
+    document.getElementById('changeCoordinates').innerHTML = '<button onclick="redirectToChurchMap();">Show on Map</button>';
 }
 
-function viewUploadedPictures() {
-    var server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
-    if (server)
-    {
-    var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange=function(){ if(xmlhttp.readyState === 4){
-            if (xmlhttp.status === 200) {
-                document.getElementById('server_images').innerHTML = xmlhttp.responseText;
-            }
-            else {
-                document.getElementById('server_images').innerHTML = "Error retrieving pictures from server.";
-            }            }
-        };
-        xmlhttp.open("GET", server , true);
-        xmlhttp.send();
-    }
-}
+
 
 function getLocation() {
     navigator.geolocation.getCurrentPosition(showMap, onError, {enableHighAccuracy: true});
 }
 
 function showMap(position) {
+
     var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
     var mapOptions = {
@@ -210,7 +222,7 @@ function showMap(position) {
     churchLength = xmlDoc.getElementsByTagName("Church").length;
 
     for(i = 0; i < churchLength; i++) {
-        churchID = xmlDoc.getElementsByTagName("id")[0].childNodes[0].nodeValue;
+        churchID = xmlDoc.getElementsByTagName("id")[i].childNodes[0].nodeValue;
         churchName = xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue;
         churchCoords = xmlDoc.getElementsByTagName("coordinates")[i].childNodes[0].nodeValue;
 
@@ -220,16 +232,16 @@ function showMap(position) {
 
         var churchLatLog = new google.maps.LatLng(churchLat, churchLong);
 
-        var marker = new google.maps.Marker({
+        var markerChurches = new google.maps.Marker({
             position: churchLatLog,
             map: map,
             animation: google.maps.Animation.DROP,
             title: churchName
         });
 
-        google.maps.event.addListener(marker, 'click', function() {
-            window.location.href = "#churchDetailsFromMap";
-        });
+        markerChurches.set("id", churchID);
+
+        bindMarkerEvents(markerChurches);
 
     }
 
@@ -251,6 +263,12 @@ function showMap(position) {
 
 }
 
+var bindMarkerEvents = function(marker) {
+    google.maps.event.addListener(marker, 'click', function() {
+        window.location = "#churchDetailsFromMap";
+        getDetailsFromMap(marker.get("id"));
+    });
+};
 
 function onError(error) {
     alert('code: '    + error.code    + '\n' +

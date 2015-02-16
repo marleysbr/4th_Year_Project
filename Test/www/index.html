@@ -79,6 +79,43 @@
 
 </div>
 
+<div data-role="page" id="dailyReadings">
+
+    <div data-role="header" data-position="fixed">
+        <h1>Daily Readings</h1><a href="#home" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
+    </div>
+
+
+    <div id="readings" class="ui-content" role="main">
+
+        <div id="content_wrap">
+
+
+            <div id="content">
+                <div class="post" id="post-99">
+                    <h1>Today&#8217;s Mass Readings</h1>
+                    <div class="mass-entry">
+                        <p><script type="text/javascript"><!--
+                        var now = new Date();
+                        var year = now.getFullYear();
+                        var day =now.getDate();
+                        var month = now.getMonth();
+                        month = month +1 ;
+                        var today_date = year + '-'  + month + '-' +  day;
+                        // --></script><br />
+                            <script src="http://mass-readings.actonbv.com/displayCode.php?reqdate=&amp;{today_date}&amp;m=j" type="text/javascript" charset="windows-1252"></script></p>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
 <div data-role="page" id="camera">
 
     <div data-role="header" data-position="fixed">
@@ -88,11 +125,10 @@
     <div class="ui-content" role="main">
 
         <p><b>Status:</b> <span id="camera_status"></span></p>
-        <p> <b>Image:</b>     <img style="width:200px; visibility:hidden; display:none;" id="camera_image" src="" /> </p>
+        <p> <b>Image:</b>     <img style="width:200px;" id="camera_image" src="" /> </p>
 
         <button onclick="takePicture();">New picture</button>
-        <button onclick="useExistingPhoto();">Select from Gallery</button>
-        <button onclick="uploadPicture();">Upload picture</button>
+        <button onclick="getPicture();">Select from Gallery</button>
 
     </div>
 

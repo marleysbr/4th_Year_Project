@@ -239,7 +239,7 @@ module.exports.metadata =
     "org.apache.cordova.geolocation": "0.3.10",
     "com.microsoft.azure-mobile-services": "1.2.7",
     "org.apache.cordova.camera": "0.3.3",
-    "org.apache.cordova.file-transfer": "0.4.7",
+    "org.apache.cordova.file-transfer": "0.5.0",
     "org.apache.cordova.inappbrowser": "0.5.3",
     "org.apache.cordova.file": "1.3.1"
 }

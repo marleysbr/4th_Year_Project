@@ -8,13 +8,54 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug-unaligned.apk" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug.apk" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/img/Thumbs.db" afterPath="$PROJECT_DIR$/platforms/android/assets/www/img/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/Thumbs.db" afterPath="$PROJECT_DIR$/www/img/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/ja/index.md" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/ja/index.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/ios/CDVFileTransfer.h" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/ios/CDVFileTransfer.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/ios/CDVFileTransfer.m" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/ios/CDVFileTransfer.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/CONTRIBUTING.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/android/FileProgressResult.java" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/android/FileProgressResult.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/wp/FileTransfer.cs" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/wp/FileTransfer.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/amazon/FileTransfer.java" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/amazon/FileTransfer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/android/FileTransfer.java" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/android/FileTransfer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/plugins/org.apache.cordova.file-transfer/www/FileTransfer.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/plugins/org.apache.cordova.file-transfer/www/FileTransfer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/FileTransfer.js" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/FileTransfer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/blackberry10/FileTransfer.js" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/blackberry10/FileTransfer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/plugins/org.apache.cordova.file-transfer/www/FileTransferError.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/plugins/org.apache.cordova.file-transfer/www/FileTransferError.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/FileTransferError.js" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/FileTransferError.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/windows/FileTransferProxy.js" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/windows/FileTransferProxy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/blackberry10/FileTransferProxy.js" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/blackberry10/FileTransferProxy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/firefoxos/FileTransferProxy.js" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/firefoxos/FileTransferProxy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/android/FileUploadResult.java" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/android/FileUploadResult.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/LICENSE" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/NOTICE" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/NOTICE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/README.md" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/RELEASENOTES.md" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/RELEASENOTES.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/wp7/base64.js" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/wp7/base64.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/build.prop" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/build.prop" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/build.prop" afterPath="$PROJECT_DIR$/platforms/android/ant-build/build.prop" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/ubuntu/file-transfer.cpp" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/ubuntu/file-transfer.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/ubuntu/file-transfer.h" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/src/ubuntu/file-transfer.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/index.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index.js" afterPath="$PROJECT_DIR$/www/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/index.md" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/index.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/de/index.md" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/de/index.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/es/index.md" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/es/index.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/fr/index.md" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/fr/index.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/it/index.md" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/it/index.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/ko/index.md" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/ko/index.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/pl/index.md" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/pl/index.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/ru/index.md" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/ru/index.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/zh/index.md" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/doc/zh/index.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/package.json" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/plugin.xml" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/tests/plugin.xml" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/tests/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/tests/tests.js" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/tests/tests.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/blackberry10/xhrFileTransfer.js" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.file-transfer/www/blackberry10/xhrFileTransfer.js" />
     </list>
     <ignored path="Test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +82,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.192307" vertical-offset="1776" max-vertical-offset="3791">
-              <caret line="117" column="19" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="19" />
+            <state vertical-scroll-proportion="-19.307692" vertical-offset="1708" max-vertical-offset="4403">
+              <caret line="130" column="37" selection-start-line="130" selection-start-column="37" selection-end-line="130" selection-end-column="37" />
               <folding>
-                <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,8 +95,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5865071" vertical-offset="4068" max-vertical-offset="5848">
-              <caret line="271" column="0" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.8221226" vertical-offset="963" max-vertical-offset="5372">
+              <caret line="89" column="27" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -84,10 +125,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -198,10 +237,14 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="RunManager" selected="PhoneGap/Cordova.Unnamed">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <method />
     </configuration>
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -211,8 +254,7 @@
       <setting name="preferredDebugBrowser" value="Chrome" />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="PhoneGap" factoryName="PhoneGap/Cordova">
@@ -223,9 +265,6 @@
       <option name="myExtraArgs" />
       <option name="hasTarget" value="false" />
       <option name="target" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
@@ -276,28 +315,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="0" width="960" height="1040" extended-state="1" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32760474" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3305174" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.122395836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24894068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23336853" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23737916" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2344245" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -339,8 +378,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2788">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -366,8 +405,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1028" max-vertical-offset="1972">
           <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -392,8 +431,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="875" max-vertical-offset="1972">
           <caret line="84" column="41" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -418,8 +457,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1955">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -444,8 +483,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="297" max-vertical-offset="1802">
           <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -463,8 +502,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1802">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -701,19 +740,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.192307" vertical-offset="1776" max-vertical-offset="3791">
-          <caret line="117" column="19" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="19" />
+        <state vertical-scroll-proportion="-19.307692" vertical-offset="1708" max-vertical-offset="4403">
+          <caret line="130" column="37" selection-start-line="130" selection-start-column="37" selection-end-line="130" selection-end-column="37" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#p#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5865071" vertical-offset="4068" max-vertical-offset="5848">
-          <caret line="271" column="0" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8221226" vertical-offset="963" max-vertical-offset="5372">
+          <caret line="89" column="27" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
           <folding />
         </state>
       </provider>

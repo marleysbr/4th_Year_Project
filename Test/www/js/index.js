@@ -64,6 +64,50 @@ function getChurches() {
 
 }
 
+function takePicture() {
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.FILE_URI });
+}
+
+function getPicture() {
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.FILE_URI,
+        sourceType : Camera.PictureSourceType.PHOTOLIBRARY });
+}
+
+function uploadImage(imageData) {
+    var serverURL = "http://marlan4thyearproject.comli.com/uploadPicture.php";
+    var options = new FileUploadOptions();
+    options.fileKey = 'file';
+    options.fileName = imageData.substr(imageData.lastIndexOf('/')+1);
+    options.mimeType = "image/jpeg";
+
+    var ft = new FileTransfer();
+    ft.upload(imageData, serverURL, onUploadSuccess, onUploadFail, options);
+}
+
+function onUploadSuccess() {
+    alert("Picture uploaded");
+}
+
+function onUploadFail() {
+    alert("Picture Upload Failed");
+}
+
+function onSuccess(imageData) {
+    var image = document.getElementById('camera_image');
+    image.src = imageData;
+    alert(image.src);
+    uploadImage(imageData);
+
+    server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
+
+}
+
+function onFail(message) {
+    alert('Failed because ' +message);
+}
+
 function getDetails(id) {
 
     if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -140,78 +184,7 @@ function getDetailsFromMap(id) {
     document.getElementById('changeCoordinates').innerHTML = '<button onclick="redirectToChurchMap();">Show on Map</button>';
 }
 
-function takePicture() {
-    navigator.camera.getPicture(
-        function(uri) {
-            var img = document.getElementById('camera_image');
-            img.style.visibility = "visible";
-            img.style.display = "block";
-            img.src = uri;
-            document.getElementById('camera_status').innerHTML = "Success";
-        }, function(e) {
-            console.log("Error getting picture: " + e);
-            document.getElementById('camera_status').innerHTML = "Error getting picture."; },
-        { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI, correctOrientation: true});
-};
 
-function useExistingPhoto() {
-    navigator.camera.getPicture(
-        function(uri) {
-            var img = document.getElementById('camera_image');
-            img.style.visibility = "visible";
-            img.style.display = "block";
-            img.src = uri;
-            document.getElementById('camera_status').innerHTML = "Success";
-        }, function(e) {
-            console.log("Error getting picture: " + e);
-            document.getElementById('camera_status').innerHTML = "Error getting picture."; },
-    { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY} );
-};
-
-function uploadPicture() {
-    var img = document.getElementById('camera_image');
-    var imageURI = img.src;
-    if (!imageURI || (img.style.display == "none")) {
-        document.getElementById('camera_status').innerHTML = "Take picture or select picture from library first.";
-        return;
-    }
-
-    document.getElementById('camera_status').innerHTML = "Uploading...";
-
-    var server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
-    if (server) {
-        var options = new FileUploadOptions();
-            options.fileKey="file";
-            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-            options.mimeType="image/jpeg";
-            options.chunkedMode = false;
-
-            var ft = new FileTransfer();
-            ft.upload(imageURI, server, function(r) {
-                document.getElementById('camera_status').innerHTML = "Upload successful: "+ r.bytesSent+" bytes uploaded.";
-            }, function(error) {
-                document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+ error.code;
-            }, options);
-    }
-}
-
-function viewUploadedPictures() {
-    var server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
-    if (server)
-    {
-    var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange=function(){ if(xmlhttp.readyState === 4){
-            if (xmlhttp.status === 200) {
-                document.getElementById('server_images').innerHTML = xmlhttp.responseText;
-            }
-            else {
-                document.getElementById('server_images').innerHTML = "Error retrieving pictures from server.";
-            }            }
-        };
-        xmlhttp.open("GET", server , true);
-        xmlhttp.send();
-    }
-}
 
 function getLocation() {
     navigator.geolocation.getCurrentPosition(showMap, onError, {enableHighAccuracy: true});
@@ -296,7 +269,6 @@ var bindMarkerEvents = function(marker) {
         getDetailsFromMap(marker.get("id"));
     });
 };
-
 
 function onError(error) {
     alert('code: '    + error.code    + '\n' +
