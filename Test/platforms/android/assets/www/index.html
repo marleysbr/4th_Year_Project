@@ -74,6 +74,7 @@
             <li><a href="#map"><img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/map_marker.png" class="ui-li-icon">Map</a></li>
             <li><a href="#camera"><img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/camera-512.png" class="ui-li-icon">Take a Picture</a></li>
             <li><a href="#about"><img src="http://ed101.bu.edu/StudentDoc/Archives/ED101fa10/emfoley2/Images/about-icon.png" class="ui-li-icon">About</a></li>
+            <li class='exit'><a href=""><img src="http://png-1.findicons.com/files/icons/2711/free_icons_for_windows8_metro/512/exit.png" class="ui-li-icon">Exit</a></li>
         </ul>
     </div>
 
@@ -182,6 +183,7 @@
                     <p><strong>Weekday Masses:</strong> <p id="churchWeekdayMass1"></p></p>
                     <p><strong>Weekend Masses:</strong> <p id="churchWeekendMass1"></p></p>
                 </div>
+                <button onclick="">Get Directions</button>
             </div>
         </div>
 
@@ -216,7 +218,7 @@
 <div data-role="page" id="mapWithChurch">
 
     <div data-role="header" data-position="fixed">
-        <h1>Map</h1><a href="#churchDetails" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
+        <h1>Map</h1><a href="#churchDetails" id="goBackToChurchDetails" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
     </div>
 
     <div class="ui-content" role="main" id="map_canvas1">

@@ -1,6 +1,9 @@
 var appomat = {};
 var pictureSource;
 var destinationType;
+var watchID;
+var directionsDisplay;
+var directionsService;
 
 appomat.app = {
     // Application Constructor
@@ -15,20 +18,6 @@ appomat.app = {
     }
 
 };
-
-function showChurches() {
-
-    var jqxhr = $.ajax({ url: "http://marlan4thyearproject.comli.com/showChurches.php" })
-        .success(function(data) {
-            document.getElementById("txtHint").innerHTML = data;
-            console.log(JSON.parse((data)));
-            alert("OK");
-        })
-        .error(function() {
-            alert("error");
-        })
-        .complete(function() {});
-}
 
 function getChurches() {
 
@@ -280,7 +269,12 @@ function redirectToChurchMap() {
     window.location = "#mapWithChurch";
 }
 
+
+
 function showMapChurch(lat, long) {
+
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    directionsService = new google.maps.DirectionsService();
 
     var myLatLng = new google.maps.LatLng(lat, long);
 
@@ -291,6 +285,7 @@ function showMapChurch(lat, long) {
     };
 
     var map = new google.maps.Map(document.getElementById("map_canvas1"),mapOptions);
+    directionsDisplay.setMap(map);
 
     google.maps.event.addListenerOnce(map, 'idle', function() {
         var center = map.getCenter();
@@ -302,9 +297,77 @@ function showMapChurch(lat, long) {
         position: myLatLng,
         map: map,
         animation: google.maps.Animation.DROP,
-        title: "You are here!"
+        title: "Church's Location"
     });
 
-    marker.setMap(map);
+    var myLatLng1;
+    var marker1;
+    var request;
+
+    navigator.geolocation.getCurrentPosition(function putMarker(position) {
+
+        myLatLng1 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+         marker1 = new google.maps.Marker({
+            position: myLatLng1,
+            map: map,
+            icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+            animation: google.maps.Animation.DROP,
+            title: "You are here!"
+        });
+
+    }, onError, {enableHighAccuracy: true});
+
+    navigator.geolocation.watchPosition(
+        function (position) {
+            setMarkerPosition(
+                marker1, position, map
+            );
+        }, onError, {enableHighAccuracy: true});
+
+    function setMarkerPosition(marker1, position, map) {
+
+        marker1.setPosition(new google.maps.LatLng(
+            position.coords.latitude,
+            position.coords.longitude));
+
+        google.maps.event.addListener(marker1, "position_changed", function() {
+            map.panTo(new google.maps.LatLng(
+                position.coords.latitude,
+                position.coords.longitude));
+
+        });
+
+        myLatLng1 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+        request = {
+            origin:myLatLng1,
+            destination:myLatLng,
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+        directionsService.route(request, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setOptions({ preserveViewport: true });
+                directionsDisplay.setDirections(response);
+            }
+
+            google.maps.event.addListener(directionsDisplay, 'directions_changed', function() {
+
+            });
+        });
+
+    }
+
+ /*            map.panTo(new google.maps.LatLng(
+  position.coords.latitude,
+  position.coords.longitude));
+  map.setZoom(17);*/
+
 }
+
+$('goBackToChurchDetails').click( function stopWatchPosition() {
+    navigator.geolocation.clearWatch(watchID);
+    directionsDisplay.setMap();
+});
+
 
