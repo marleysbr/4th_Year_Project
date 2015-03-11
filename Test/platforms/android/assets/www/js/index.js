@@ -19,11 +19,6 @@ appomat.app = {
 
 };
 
-$('.exit').click( function exit() {
-    alert("Test");
-});
-
-
 function getChurches() {
 
     if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -70,7 +65,7 @@ function getPicture() {
 }
 
 function uploadImage(imageData) {
-    var serverURL = "http://marlan4thyearproject.comli.com/uploadPicture.php";
+    var serverURL = "http://marlan4thyearproject.comli.com/uploadPicture.php?id=" +churchID;
     var options = new FileUploadOptions();
     options.fileKey = 'file';
     options.fileName = imageData.substr(imageData.lastIndexOf('/')+1);
@@ -91,11 +86,9 @@ function onUploadFail() {
 function onSuccess(imageData) {
     var image = document.getElementById('camera_image');
     image.src = imageData;
-    alert(image.src);
     uploadImage(imageData);
 
     server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
-
 }
 
 function onFail(message) {

@@ -123,18 +123,7 @@
         <h1>Take a Picture</h1><a href="#home" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
     </div>
 
-    <div class="ui-content" role="main">
 
-        <p><b>Status:</b> <span id="camera_status"></span></p>
-        <p> <b>Image:</b>     <img style="width:200px;" id="camera_image" src="" /> </p>
-
-        <button onclick="takePicture();">New picture</button>
-        <button onclick="getPicture();">Select from Gallery</button>
-
-    </div>
-
-    <button onclick="viewUploadedPictures();">View uploaded pictures</button>
-    <img style="width:200px; visibility:hidden; display:none;" id="server_images" src="" />
 
 
 </div>
@@ -183,7 +172,17 @@
                     <p><strong>Weekday Masses:</strong> <p id="churchWeekdayMass1"></p></p>
                     <p><strong>Weekend Masses:</strong> <p id="churchWeekendMass1"></p></p>
                 </div>
+
                 <button onclick="">Get Directions</button>
+
+                <p> <b>Image:</b>     <img style="width:200px;" id="camera_image" src="" /> </p>
+
+                <button onclick="takePicture();">New picture</button>
+                <button onclick="getPicture();">Select from Gallery</button>
+
+
+                <button onclick="viewUploadedPictures();">View uploaded pictures</button>
+                <img style="width:200px; visibility:hidden; display:none;" id="server_images" src="" />
             </div>
         </div>
 
@@ -210,8 +209,20 @@
                     <p><strong>Weekend Masses:</strong> <p id="churchWeekendMass"></p></p>
                     <div id="changeCoordinates"></div>
                 </div>
+
+                <p> <b>Image:</b>     <img style="width:200px;" id="camera_image" src="" /> </p>
+
+                <button onclick="takePicture();">New picture</button>
+                <button onclick="getPicture();">Select from Gallery</button>
+
+
+                <button onclick="viewUploadedPictures();">View uploaded pictures</button>
+                <img style="width:200px; visibility:hidden; display:none;" id="server_images" src="" />
             </div>
         </div>
+
+
+
     </div>
 </div>
 
