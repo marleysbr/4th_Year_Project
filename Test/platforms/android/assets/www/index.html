@@ -63,7 +63,7 @@
         <a href="#listOfChurches"><div id="listMenuChurches">List of Churches</div></a>
         <a href="#map"><div id="listMenuMap">Map</div></a>
         <a href="#nearMasses"><div id="listMenuMass">Near You</div></a>
-        <a href="#camera"><div id="listMenuPicture">Picture</div></a>
+        <a href="#pictures"><div id="listMenuPicture">Picture</div></a>
         <!--  <a href="#about"><div id="listMenuAbout">About</div></a> -->
 
     </div>
@@ -72,7 +72,7 @@
         <ul data-role="listview" data-inset="true" class="ui-alt-icon">
             <li><a href="#listOfChurches"><img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/church.png" class="ui-li-icon">List of Churches</a></li>
             <li><a href="#map"><img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/map_marker.png" class="ui-li-icon">Map</a></li>
-            <li><a href="#camera"><img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/camera-512.png" class="ui-li-icon">Take a Picture</a></li>
+            <li><a href="#pictures"><img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/camera-512.png" class="ui-li-icon">Take a Picture</a></li>
             <li><a href="#about"><img src="http://ed101.bu.edu/StudentDoc/Archives/ED101fa10/emfoley2/Images/about-icon.png" class="ui-li-icon">About</a></li>
             <li class='exit'><a href=""><img src="http://png-1.findicons.com/files/icons/2711/free_icons_for_windows8_metro/512/exit.png" class="ui-li-icon">Exit</a></li>
         </ul>
@@ -117,13 +117,16 @@
 
 </div>
 
-<div data-role="page" id="camera">
+<div data-role="page" id="pictures">
 
     <div data-role="header" data-position="fixed">
-        <h1>Take a Picture</h1><a href="#home" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
+        <h1>All Pictures</h1><a href="#home" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
     </div>
 
-
+    <div class="ui-content" role="main">
+        <button onclick="getAllPictures();">Show All Pictures</button>
+        <p id="imagesOfChurch2"></p>
+    </div>
 
 
 </div>
@@ -175,14 +178,13 @@
 
                 <button onclick="">Get Directions</button>
 
-                <p> <b>Image:</b>     <img style="width:200px;" id="camera_image" src="" /> </p>
+                <p> <b>Image:</b>     <img style="width:200px;height:200px" id="camera_image1" src="" /> </p>
 
-                <button onclick="takePicture();">New picture</button>
-                <button onclick="getPicture();">Select from Gallery</button>
+                <button onclick="takePicture1();">New picture</button>
+                <button onclick="getPicture1();">Select from Gallery</button>
+                <button onclick="viewUploadedPictures1();">View uploaded pictures</button>
 
-
-                <button onclick="viewUploadedPictures();">View uploaded pictures</button>
-                <img style="width:200px; visibility:hidden; display:none;" id="server_images" src="" />
+                <p id="imagesOfChurch1"></p>
             </div>
         </div>
 
@@ -210,14 +212,13 @@
                     <div id="changeCoordinates"></div>
                 </div>
 
-                <p> <b>Image:</b>     <img style="width:200px;" id="camera_image" src="" /> </p>
+                <p> <b>Image:</b>     <img style="width:200px;height:200px" id="camera_image" src="" /> </p>
 
                 <button onclick="takePicture();">New picture</button>
                 <button onclick="getPicture();">Select from Gallery</button>
-
-
                 <button onclick="viewUploadedPictures();">View uploaded pictures</button>
-                <img style="width:200px; visibility:hidden; display:none;" id="server_images" src="" />
+
+                <p id="imagesOfChurch"></p>
             </div>
         </div>
 
