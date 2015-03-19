@@ -96,29 +96,6 @@ function onFail(message) {
     alert('Failed because ' +message);
 }
 
-function viewUploadedPictures() {
-    if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp = new XMLHttpRequest();
-    }
-    else {  // code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.async = false;
-    xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/getPictures.php?id=" +churchID, false);
-    xmlhttp.send();
-    xmlDoc = xmlhttp.responseXML;
-
-    churchLength = xmlDoc.getElementsByTagName("Image").length;
-
-    for(i = 0; i < churchLength; i++) {
-        imageID = xmlDoc.getElementsByTagName("imageID")[i].childNodes[0].nodeValue;
-        churchID = xmlDoc.getElementsByTagName("churchID")[i].childNodes[0].nodeValue;
-        filePath = xmlDoc.getElementsByTagName("filePath")[i].childNodes[0].nodeValue;
-
-        document.getElementById('imagesOfChurch').innerHTML = "<img style='width:75px;height:75px' id="+imageID+" src="+filePath+" />";
-    }
-}
-
 function takePicture1() {
     navigator.camera.getPicture(onSuccess1, onFail1, { quality: 50,
         destinationType: Camera.DestinationType.FILE_URI,
@@ -142,14 +119,6 @@ function uploadImage1(imageData) {
     ft.upload(imageData, serverURL, onUploadSuccess, onUploadFail, options);
 }
 
-function onUploadSuccess1() {
-    alert("Picture uploaded");
-}
-
-function onUploadFail1() {
-    alert("Picture Upload Failed");
-}
-
 function onSuccess1(imageData) {
     var image = document.getElementById('camera_image1');
     image.src = imageData;
@@ -162,7 +131,7 @@ function onFail1(message) {
     alert('Failed because ' +message);
 }
 
-function viewUploadedPictures1() {
+function viewUploadedPictures() {
     if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
     }
@@ -175,14 +144,18 @@ function viewUploadedPictures1() {
     xmlDoc = xmlhttp.responseXML;
 
     churchLength = xmlDoc.getElementsByTagName("Image").length;
+    images_array = [];
 
     for(i = 0; i < churchLength; i++) {
         imageID = xmlDoc.getElementsByTagName("imageID")[i].childNodes[0].nodeValue;
         churchID = xmlDoc.getElementsByTagName("churchID")[i].childNodes[0].nodeValue;
+        churchName = xmlDoc.getElementsByTagName("churchName")[i].childNodes[0].nodeValue;
         filePath = xmlDoc.getElementsByTagName("filePath")[i].childNodes[0].nodeValue;
-
-        document.getElementById('imagesOfChurch1').innerHTML = "<img style='width:75px;height:75px' id="+imageID+" src="+filePath+" />";
+        images_array.push({href: filePath, title: churchName});
     }
+
+    $.swipebox(images_array);
+
 }
 
 function getAllPictures() {
@@ -198,14 +171,17 @@ function getAllPictures() {
     xmlDoc = xmlhttp.responseXML;
 
     churchLength = xmlDoc.getElementsByTagName("Image").length;
+    images_array = [];
 
     for(i = 0; i < churchLength; i++) {
         imageID = xmlDoc.getElementsByTagName("imageID")[i].childNodes[0].nodeValue;
         churchID = xmlDoc.getElementsByTagName("churchID")[i].childNodes[0].nodeValue;
+        churchName = xmlDoc.getElementsByTagName("churchName")[i].childNodes[0].nodeValue;
         filePath = xmlDoc.getElementsByTagName("filePath")[i].childNodes[0].nodeValue;
-
-        document.getElementById('imagesOfChurch2').innerHTML = "<img style='width:75px;height:75px' id="+imageID+" src="+filePath+" />";
+        images_array.push({href: filePath, title: churchName});
     }
+
+    $.swipebox(images_array);
 }
 
 function getDetails(id) {
@@ -480,5 +456,4 @@ $('goBackToChurchDetails').click( function stopWatchPosition() {
     navigator.geolocation.clearWatch(watchID);
     directionsDisplay.setMap();
 });
-
 

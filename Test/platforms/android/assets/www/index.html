@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.0.min.css" />
+    <link rel="stylesheet" href="css/swipebox.css">
 
     <!--
     <script type="text/javascript" src="lib/jquery-mobile/js/jquery-1.11.0.js"></script>
@@ -27,14 +28,30 @@
     <script type="text/javascript"
             src="http://maps.googleapis.com/maps/api/js?sensor=false">
     </script>
-    <script>
-        $(document).bind("mobileinit", function(){
-            $.mobile.allowCrossDomainPages = true;
-        });
-    </script>
+    <script src="lib/jquery-2.0.3.js"></script>
+    <script src="js/jquery.swipebox.js"></script>
+
 </head>
 
 <body>
+
+<script>
+    $(document).bind("mobileinit", function(){
+        $.mobile.allowCrossDomainPages = true;
+    });
+</script>
+
+<script type="text/javascript">
+    ;( function( $ ) {
+
+        $( '.swipebox' ).swipebox({
+            useCSS : true,
+            hideCloseButtonOnMobile : false,
+            hideBarsOnMobile : false
+        });
+
+    } )( jQuery );
+</script>
 
 <script>
     $( document ).on( "pageinit", "#home", function() {
@@ -63,7 +80,7 @@
         <a href="#listOfChurches"><div id="listMenuChurches">List of Churches</div></a>
         <a href="#map"><div id="listMenuMap">Map</div></a>
         <a href="#nearMasses"><div id="listMenuMass">Near You</div></a>
-        <a href="#pictures"><div id="listMenuPicture">Picture</div></a>
+        <a href="#pictures"><div id="listMenuPicture">Pictures</div></a>
         <!--  <a href="#about"><div id="listMenuAbout">About</div></a> -->
 
     </div>
@@ -72,7 +89,7 @@
         <ul data-role="listview" data-inset="true" class="ui-alt-icon">
             <li><a href="#listOfChurches"><img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/church.png" class="ui-li-icon">List of Churches</a></li>
             <li><a href="#map"><img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/map_marker.png" class="ui-li-icon">Map</a></li>
-            <li><a href="#pictures"><img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/camera-512.png" class="ui-li-icon">Take a Picture</a></li>
+            <li><a href="#pictures"><img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/camera-512.png" class="ui-li-icon">Pictures</a></li>
             <li><a href="#about"><img src="http://ed101.bu.edu/StudentDoc/Archives/ED101fa10/emfoley2/Images/about-icon.png" class="ui-li-icon">About</a></li>
             <li class='exit'><a href=""><img src="http://png-1.findicons.com/files/icons/2711/free_icons_for_windows8_metro/512/exit.png" class="ui-li-icon">Exit</a></li>
         </ul>
@@ -125,7 +142,7 @@
 
     <div class="ui-content" role="main">
         <button onclick="getAllPictures();">Show All Pictures</button>
-        <p id="imagesOfChurch2"></p>
+
     </div>
 
 
@@ -182,9 +199,8 @@
 
                 <button onclick="takePicture1();">New picture</button>
                 <button onclick="getPicture1();">Select from Gallery</button>
-                <button onclick="viewUploadedPictures1();">View uploaded pictures</button>
+                <button onclick="viewUploadedPictures();">View uploaded pictures</button>
 
-                <p id="imagesOfChurch1"></p>
             </div>
         </div>
 
@@ -216,9 +232,9 @@
 
                 <button onclick="takePicture();">New picture</button>
                 <button onclick="getPicture();">Select from Gallery</button>
+
                 <button onclick="viewUploadedPictures();">View uploaded pictures</button>
 
-                <p id="imagesOfChurch"></p>
             </div>
         </div>
 

@@ -17,6 +17,16 @@ body {
     bottom:0; left:0;
 }
 
+ul {
+    list-style-type: none;
+}
+
+.galleryChurch li {
+    display: inline;
+    float: left;
+    padding: 10px;
+}
+
 #listMenuReadings {
     right: 0; left: 0;
     top: 5px;

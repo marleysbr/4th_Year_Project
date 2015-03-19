@@ -38,3 +38,7 @@ http://www.jqwidgets.com/jquery-widgets-documentation/documentation/phpintegrati
 
 Loading Data into Phonegap
 http://samcroft.co.uk/2010/loading-data-into-a-phonegap-app/
+
+SwipeBox
+http://expressionengine.aspcode.net/ppst/63547278635127715528292/display-image-gallery-on-clicking-separate-image-using-matrix
+https://github.com/brutaldesign/swipebox
