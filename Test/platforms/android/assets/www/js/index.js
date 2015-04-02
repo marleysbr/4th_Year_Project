@@ -1,7 +1,7 @@
 var appomat = {};
 var pictureSource;
 var destinationType;
-var watchID;
+var watchID = null;
 var directionsDisplay;
 var directionsService;
 
@@ -41,7 +41,7 @@ function getChurches() {
         churchCity = xmlDoc.getElementsByTagName("city")[i].childNodes[0].nodeValue;
         churchCounty = xmlDoc.getElementsByTagName("county")[i].childNodes[0].nodeValue;
 
-        $("#result_list").append("<li id=" +churchID+ " class='test'><a href='#churchDetails'>" + churchName + " - " + churchCity +" (" + churchCounty + ")</a></li>");
+        $("#result_list").append("<li id=" +churchID+ " class='test'><a href='#churchDetails'><h3>" + churchName + "</h3> <p><b>► City:</b> " + churchCity +" &nbsp;  &nbsp; <b>► County: </b>" + churchCounty + " </p> </a></li>");
 
         $("#result_list").listview("refresh");
 
@@ -85,8 +85,8 @@ function onUploadFail() {
 }
 
 function onSuccess(imageData) {
-    var image = document.getElementById('camera_image');
-    image.src = imageData;
+    //var image = document.getElementById('camera_image');
+    //image.src = imageData;
     uploadImage(imageData);
 
     server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
@@ -108,7 +108,7 @@ function getPicture1() {
         sourceType : Camera.PictureSourceType.PHOTOLIBRARY });
 }
 
-function uploadImage1(imageData) {
+/*function uploadImage1(imageData) {
     var serverURL = "http://marlan4thyearproject.comli.com/uploadPicture.php?id=" +churchID;
     var options = new FileUploadOptions();
     options.fileKey = 'file';
@@ -117,14 +117,14 @@ function uploadImage1(imageData) {
 
     var ft = new FileTransfer();
     ft.upload(imageData, serverURL, onUploadSuccess, onUploadFail, options);
-}
+}*/
 
 function onSuccess1(imageData) {
-    var image = document.getElementById('camera_image1');
-    image.src = imageData;
+    //var image = document.getElementById('camera_image1');
+    //image.src = imageData;
     uploadImage(imageData);
 
-    server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
+    //server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
 }
 
 function onFail1(message) {
@@ -185,7 +185,6 @@ function getAllPictures() {
 }
 
 function getDetails(id) {
-
     if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
     }
@@ -203,23 +202,24 @@ function getDetails(id) {
     churchCity = xmlDoc.getElementsByTagName("city")[0].childNodes[0].nodeValue;
     churchCounty = xmlDoc.getElementsByTagName("county")[0].childNodes[0].nodeValue;
     churchTelephone = xmlDoc.getElementsByTagName("telephone")[0].childNodes[0].nodeValue;
+
+    churchTelephone.replace(/\s+/g, '');
+
     churchCoordinates = xmlDoc.getElementsByTagName("coordinates")[0].childNodes[0].nodeValue;
     churchWeekdayMass = xmlDoc.getElementsByTagName("weekdayMass")[0].childNodes[0].nodeValue;
     churchWeekendMass = xmlDoc.getElementsByTagName("weekendMass")[0].childNodes[0].nodeValue;
 
     document.getElementById('churchName').innerHTML = churchName;
-    document.getElementById('churchAddress').innerHTML = churchAddress;
-    document.getElementById('churchCity').innerHTML = churchCity;
-    document.getElementById('churchCounty').innerHTML = churchCounty;
-    document.getElementById('churchTelephone').innerHTML = churchTelephone;
-    document.getElementById('churchWeekdayMass').innerHTML = churchWeekdayMass;
-    document.getElementById('churchWeekendMass').innerHTML = churchWeekendMass;
+    document.getElementById('churchAddress').innerHTML = "<strong>Address:</strong> " + churchAddress;
+    document.getElementById('churchCity').innerHTML = "<strong>City:</strong> " + churchCity;
+    document.getElementById('churchCounty').innerHTML = "<strong>County:</strong> " + churchCounty;
+    document.getElementById('churchTelephone').innerHTML = "<strong>Telephone:</strong> " + " <a href=tel:"+ churchTelephone +"> "+ churchTelephone + "</a>" ;
+    document.getElementById('churchWeekdayMass').innerHTML = "<strong>Weekday Mass:</strong> " + churchWeekdayMass;
+    document.getElementById('churchWeekendMass').innerHTML = "<strong>Weekend Mass:</strong> " + churchWeekendMass;
 
     churchLat = churchCoordinates.split(',')[0].split(' ').pop();
     churchLong = churchCoordinates.substr(churchCoordinates.indexOf(",") + 1);
     churchLong = churchLong.replace(/\s+/g, '');
-
-    document.getElementById('changeCoordinates').innerHTML = '<button onclick="redirectToChurchMap();">Show on Map</button>';
 }
 
 function getDetailsFromMap(id) {
@@ -246,12 +246,12 @@ function getDetailsFromMap(id) {
     churchWeekendMass = xmlDoc.getElementsByTagName("weekendMass")[0].childNodes[0].nodeValue;
 
     document.getElementById('churchName1').innerHTML = churchName;
-    document.getElementById('churchAddress1').innerHTML = churchAddress;
-    document.getElementById('churchCity1').innerHTML = churchCity;
-    document.getElementById('churchCounty1').innerHTML = churchCounty;
-    document.getElementById('churchTelephone1').innerHTML = churchTelephone;
-    document.getElementById('churchWeekdayMass1').innerHTML = churchWeekdayMass;
-    document.getElementById('churchWeekendMass1').innerHTML = churchWeekendMass;
+    document.getElementById('churchAddress1').innerHTML = "<strong>Address:</strong> " + churchAddress;
+    document.getElementById('churchCity1').innerHTML = "<strong>City:</strong> " + churchCity;
+    document.getElementById('churchCounty1').innerHTML = "<strong>County:</strong> " + churchCounty;
+    document.getElementById('churchTelephone1').innerHTML = "<strong>Telephone:</strong> " + " <a href=tel:"+ churchTelephone +"> "+ churchTelephone + "</a>" ;
+    document.getElementById('churchWeekdayMass1').innerHTML = "<strong>Weekday Mass:</strong> " + churchWeekdayMass;
+    document.getElementById('churchWeekendMass1').innerHTML = "<strong>Weekend Mass:</strong> " + churchWeekendMass;
 
     churchLat = churchCoordinates.split(',')[0].split(' ').pop();
     churchLong = churchCoordinates.substr(churchCoordinates.indexOf(",") + 1);
@@ -260,10 +260,8 @@ function getDetailsFromMap(id) {
     document.getElementById('changeCoordinates').innerHTML = '<button onclick="redirectToChurchMap();">Show on Map</button>';
 }
 
-
-
 function getLocation() {
-    navigator.geolocation.getCurrentPosition(showMap, onError, {enableHighAccuracy: true});
+    watchID = navigator.geolocation.getCurrentPosition(showMap, onError, {enableHighAccuracy: true});
 }
 
 function showMap(position) {
@@ -356,8 +354,6 @@ function redirectToChurchMap() {
     window.location = "#mapWithChurch";
 }
 
-
-
 function showMapChurch(lat, long) {
 
     directionsDisplay = new google.maps.DirectionsRenderer();
@@ -444,16 +440,80 @@ function showMapChurch(lat, long) {
         });
 
     }
+}
 
- /*            map.panTo(new google.maps.LatLng(
-  position.coords.latitude,
-  position.coords.longitude));
-  map.setZoom(17);*/
+function getNearMass() {
+
+    watchID = navigator.geolocation.watchPosition(function a(position) {
+
+        var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+        if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {  // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.async = false;
+        xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/xmlDatabase.php", false);
+        xmlhttp.send();
+        xmlDoc = xmlhttp.responseXML;
+
+        churchLength = xmlDoc.getElementsByTagName("Church").length;
+
+        //churchArray = [];
+
+        for(i = 0; i < churchLength; i++) {
+
+            churchID = xmlDoc.getElementsByTagName("id")[i].childNodes[0].nodeValue;
+            churchName = xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue;
+            churchCity = xmlDoc.getElementsByTagName("city")[i].childNodes[0].nodeValue;
+            churchCounty = xmlDoc.getElementsByTagName("county")[i].childNodes[0].nodeValue;
+
+            churchCoordinates = xmlDoc.getElementsByTagName("coordinates")[i].childNodes[0].nodeValue;
+            churchLat = churchCoordinates.split(',')[0].split(' ').pop();
+            churchLong = churchCoordinates.substr(churchCoordinates.indexOf(",") + 1);
+            churchLong = churchLong.replace(/\s+/g, '')
+
+            var distance = getDistanceFromLatLonInKm(churchLat, churchLong, myLatLng.lat(), myLatLng.lng());
+
+            //churchArray.push({name: churchName, distance: distance1});
+            $("#result_listNear").append("<li id=" +churchID+ " class='test'><a href='#'><h3>" + churchName + "</h3>" +
+            "<p><b>Distance:</b> " + distance.toPrecision(4) + "km</p>" + " </a></li>");
+
+            $("#result_listNear").listview("refresh");
+
+        }
+
+        navigator.geolocation.clearWatch(watchID);
+        watchID = null;
+
+    }, onError, {enableHighAccuracy: true});
 
 }
 
-$('goBackToChurchDetails').click( function stopWatchPosition() {
-    navigator.geolocation.clearWatch(watchID);
-    directionsDisplay.setMap();
-});
+function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+    var R = 6371; // Radius of the earth in km
+    var dLat = deg2rad(lat2-lat1);  // deg2rad below
+    var dLon = deg2rad(lon2-lon1);
+    var a =
+            Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+            Math.sin(dLon/2) * Math.sin(dLon/2)
+        ;
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var d = R * c; // Distance in km
+    return d;
+}
 
+function deg2rad(deg) {
+    return deg * (Math.PI/180)
+}
+
+function clearWatch1() {
+    if(watchID != null)
+    {
+        navigator.geolocation.clearWatch(watchID);
+        watchID = null;
+    }
+}

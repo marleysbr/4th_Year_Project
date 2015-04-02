@@ -43,6 +43,7 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\css\swipebox.min.css \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\about.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\church.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons.svg \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\loader.gif \
@@ -51,6 +52,14 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\mass.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\picture.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\readings.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\about.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\camera.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\church.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\exit.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\gallery.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\map.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\map1.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\pictures.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\js\index.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\js\jquery.swipebox.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\js\jquery.swipebox.min.js \
@@ -286,6 +295,7 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\lib\jquery-mobile-router\js\jquery.mobile.router.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\lib\jquery-mobile-router\js\jquery.mobile.router.min.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\com.microsoft.azure-mobile-services \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\mobi.roshka.cordova.callphone \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.camera \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.dialogs \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.file \
@@ -295,6 +305,8 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.statusbar \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\com.microsoft.azure-mobile-services\www \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\com.microsoft.azure-mobile-services\www\MobileServices.Web.min.js \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\mobi.roshka.cordova.callphone\www \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\mobi.roshka.cordova.callphone\www\callphone.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.camera\www \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\Camera.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraConstants.js \

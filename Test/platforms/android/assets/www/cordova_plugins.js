@@ -76,6 +76,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/mobi.roshka.cordova.callphone/www/callphone.js",
+        "id": "mobi.roshka.cordova.callphone.CallPhone",
+        "clobbers": [
+            "navigator.callphone"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
         "id": "org.apache.cordova.inappbrowser.inappbrowser",
         "clobbers": [
@@ -240,6 +247,7 @@ module.exports.metadata =
     "com.microsoft.azure-mobile-services": "1.2.7",
     "org.apache.cordova.camera": "0.3.3",
     "org.apache.cordova.file-transfer": "0.5.0",
+    "mobi.roshka.cordova.callphone": "0.0.1",
     "org.apache.cordova.inappbrowser": "0.5.3",
     "org.apache.cordova.file": "1.3.1"
 }

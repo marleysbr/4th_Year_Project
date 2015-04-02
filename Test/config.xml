@@ -15,6 +15,7 @@
     <content src="index.html" />
     <access origin="*" />
     <access origin="http://31.170.160.87*" />
+    <access origin="tel:*" launch-external="yes" />
     <access origin="http://marlan4thyearproject.comli.com/" subdomains="true" />
 
     <!-- uses cordova plugin add org.apache.cordova.statusbar to make iOS7 statusbar look right-->
