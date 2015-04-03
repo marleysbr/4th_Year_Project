@@ -442,7 +442,9 @@ function showMapChurch(lat, long) {
     }
 }
 
-function getNearMass() {
+function getNearMass(value) {
+
+    $('#result_listNear').empty();
 
     watchID = navigator.geolocation.watchPosition(function a(position) {
 
@@ -473,17 +475,33 @@ function getNearMass() {
             churchCoordinates = xmlDoc.getElementsByTagName("coordinates")[i].childNodes[0].nodeValue;
             churchLat = churchCoordinates.split(',')[0].split(' ').pop();
             churchLong = churchCoordinates.substr(churchCoordinates.indexOf(",") + 1);
-            churchLong = churchLong.replace(/\s+/g, '')
+            churchLong = churchLong.replace(/\s+/g, '');
 
             var distance = getDistanceFromLatLonInKm(churchLat, churchLong, myLatLng.lat(), myLatLng.lng());
 
             //churchArray.push({name: churchName, distance: distance1});
-            $("#result_listNear").append("<li id=" +churchID+ " class='test'><a href='#'><h3>" + churchName + "</h3>" +
+            $("#result_listNear").append("<li id=" +distance.toPrecision(4)+ " class='test'><a href='#'><h3>" + churchName + "</h3>" +
             "<p><b>Distance:</b> " + distance.toPrecision(4) + "km</p>" + " </a></li>");
 
             $("#result_listNear").listview("refresh");
 
         }
+
+        var newValue = value * 1;
+
+        var listItems = $('#result_listNear').children('li').remove();
+        listItems.each(function() {
+            if(this.id <= newValue) {
+                $('#result_listNear').append(this);
+            }
+        });
+
+        var elems = $('#result_listNear').children('li').remove();
+        elems.sort(function(a,b){
+            return parseInt(a.id) > parseInt(b.id);
+        });
+        $('#result_listNear').append(elems);
+
 
         navigator.geolocation.clearWatch(watchID);
         watchID = null;
