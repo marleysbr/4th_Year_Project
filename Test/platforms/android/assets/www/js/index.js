@@ -19,6 +19,10 @@ appomat.app = {
 
 };
 
+function exitFromApp() {
+    navigator.app.exitApp();
+}
+
 function getChurches() {
 
     if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -480,12 +484,14 @@ function getNearMass(value) {
             var distance = getDistanceFromLatLonInKm(churchLat, churchLong, myLatLng.lat(), myLatLng.lng());
 
             //churchArray.push({name: churchName, distance: distance1});
-            $("#result_listNear").append("<li id=" +distance.toPrecision(4)+ " class='test'><a href='#'><h3>" + churchName + "</h3>" +
+            $("#result_listNear").append("<li id=" +distance.toPrecision(4)+ " ><a class='test' id="+churchID+" href='#pagePanel'><h3>" + churchName + "</h3>" +
             "<p><b>Distance:</b> " + distance.toPrecision(4) + "km</p>" + " </a></li>");
 
             $("#result_listNear").listview("refresh");
 
         }
+
+
 
         var newValue = value * 1;
 
@@ -502,12 +508,53 @@ function getNearMass(value) {
         });
         $('#result_listNear').append(elems);
 
+        $('.test').click(function() {
+            getDetails2($(this).attr("id"));
+        });
 
         navigator.geolocation.clearWatch(watchID);
         watchID = null;
 
     }, onError, {enableHighAccuracy: true});
 
+}
+
+function getDetails2(id) {
+    if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    }
+    else {  // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.async = false;
+    xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/xmlChurch.php?id=" +id, false);
+    xmlhttp.send();
+    xmlDoc = xmlhttp.responseXML;
+
+    churchID = xmlDoc.getElementsByTagName("id")[0].childNodes[0].nodeValue;
+    churchName = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+    churchAddress = xmlDoc.getElementsByTagName("address")[0].childNodes[0].nodeValue;
+    churchCity = xmlDoc.getElementsByTagName("city")[0].childNodes[0].nodeValue;
+    churchCounty = xmlDoc.getElementsByTagName("county")[0].childNodes[0].nodeValue;
+    churchTelephone = xmlDoc.getElementsByTagName("telephone")[0].childNodes[0].nodeValue;
+
+    churchTelephone.replace(/\s+/g, '');
+
+    churchCoordinates = xmlDoc.getElementsByTagName("coordinates")[0].childNodes[0].nodeValue;
+    churchWeekdayMass = xmlDoc.getElementsByTagName("weekdayMass")[0].childNodes[0].nodeValue;
+    churchWeekendMass = xmlDoc.getElementsByTagName("weekendMass")[0].childNodes[0].nodeValue;
+
+    document.getElementById('churchName2').innerHTML = churchName;
+    document.getElementById('churchAddress2').innerHTML = "<strong>Address:</strong> " + churchAddress;
+    document.getElementById('churchCity2').innerHTML = "<strong>City:</strong> " + churchCity;
+    document.getElementById('churchCounty2').innerHTML = "<strong>County:</strong> " + churchCounty;
+    document.getElementById('churchTelephone2').innerHTML = "<strong>Telephone:</strong> " + " <a href=tel:"+ churchTelephone +"> "+ churchTelephone + "</a>" ;
+    document.getElementById('churchWeekdayMass2').innerHTML = "<strong>Weekday Mass:</strong> " + churchWeekdayMass;
+    document.getElementById('churchWeekendMass2').innerHTML = "<strong>Weekend Mass:</strong> " + churchWeekendMass;
+
+    churchLat = churchCoordinates.split(',')[0].split(' ').pop();
+    churchLong = churchCoordinates.substr(churchCoordinates.indexOf(",") + 1);
+    churchLong = churchLong.replace(/\s+/g, '');
 }
 
 function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
@@ -534,4 +581,8 @@ function clearWatch1() {
         navigator.geolocation.clearWatch(watchID);
         watchID = null;
     }
+}
+
+function setNotification() {
+    alert("Being developed ...")
 }

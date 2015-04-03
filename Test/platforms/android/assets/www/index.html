@@ -138,7 +138,7 @@
         <a href="#map" onclick="getLocation()"><div id="listMenuMap">Map</div></a>
         <a href="#nearYou" class="disableUpdateButton"><div id="listMenuMass">Near You</div></a>
         <a href="#pictures"><div id="listMenuPicture">Pictures</div></a>
-        <!--  <a href="#about"><div id="listMenuAbout">About</div></a> -->
+        <a href="#about"><div id="listMenuAbout">About</div></a>
 
     </div>
 
@@ -148,7 +148,7 @@
             <li><a href="#map"><img src="img/icons/map.png" class="ui-li-icon">Map</a></li>
             <li><a href="#pictures"><img src="img/icons/camera.png" class="ui-li-icon">Pictures</a></li>
             <li><a href="#about"><img src="img/icons/about.png" class="ui-li-icon">About</a></li>
-            <li class='exit'><a href=""><img src="img/icons/exit.png" class="ui-li-icon">Exit</a></li>
+            <li class='exit'><a href="" onclick="exitFromApp();"><img src="img/icons/exit.png" class="ui-li-icon">Exit</a></li>
         </ul>
     </div>
 
@@ -323,6 +323,7 @@
 
 </div>
 
+
 <div data-role="page" id="map">
 
     <div data-role="header" data-position="fixed">
@@ -337,7 +338,29 @@
 
 </div>
 
+
 <div data-role="page" id="nearYou">
+
+    <div data-role="panel" id="pagePanel" data-position="right" data-display="overlay">
+        <div id="details2">
+            <div>
+                <div id="churchDetail2">
+                    <h3 id="churchName2"></h3>
+                    <p id="churchAddress2"></p>
+                    <p id="churchCity2"></p>
+                    <p id="churchCounty2"></p>
+                    <p id="churchTelephone2"></p>
+                    <p id="churchWeekdayMass2"></p>
+                    <p id="churchWeekendMass2"></p>
+                </div>
+            </div>
+        </div>
+        <center>
+            <a href="#" onclick="setNotification();" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left">Set Notification</a>
+            <a href="#" onclick="setNotification();"data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-b ui-icon-location ui-btn-icon-left">Show on Map</a>
+            <a href="#nearYou" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left">Close</a>
+        </center>
+    </div>
 
     <div data-role="header" data-position="fixed">
         <h1>Masses Near You</h1><a href="#home" onclick="clearWatch1()" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left enableAndClear" data-transition="slide" data-direction="reverse"> Home </a>
@@ -345,8 +368,6 @@
 
     <br />
     <button class="disable" onclick="getNearMass(slider1.value);">Get Near Masses</button>
-
-    <div id="testing"></div>
 
     <div id="resultSetNear">
         <!--<form class="ui-filterable">
@@ -362,6 +383,20 @@
     </div>
 
 </div>
+
+
+<div data-role="page" id="about">
+
+    <div data-role="header" data-position="fixed">
+        <h1>About</h1><a href="#home"  class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Home </a>
+    </div>
+
+    <div class="ui-content" role="main">
+        <p>Being developed ...</p>
+    </div>
+
+</div>
+
 
 <script type="text/javascript" src="../platform/js/libs/cordova.js"></script>
 <script type="text/javascript" src="cordova.js"></script>

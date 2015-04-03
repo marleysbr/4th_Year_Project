@@ -83,6 +83,17 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/nl.x-services.plugins.calendar/www/Calendar.js",
+        "id": "nl.x-services.plugins.calendar.Calendar",
+        "clobbers": [
+            "Calendar"
+        ]
+    },
+    {
+        "file": "plugins/nl.x-services.plugins.calendar/test/tests.js",
+        "id": "nl.x-services.plugins.calendar.tests"
+    },
+    {
         "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
         "id": "org.apache.cordova.inappbrowser.inappbrowser",
         "clobbers": [
@@ -248,6 +259,7 @@ module.exports.metadata =
     "org.apache.cordova.camera": "0.3.3",
     "org.apache.cordova.file-transfer": "0.5.0",
     "mobi.roshka.cordova.callphone": "0.0.1",
+    "nl.x-services.plugins.calendar": "4.3.0",
     "org.apache.cordova.inappbrowser": "0.5.3",
     "org.apache.cordova.file": "1.3.1"
 }

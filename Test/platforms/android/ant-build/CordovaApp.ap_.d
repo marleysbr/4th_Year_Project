@@ -1042,6 +1042,7 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\lib\jquery-mobile-router\js\jquery.mobile.router.min.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\com.microsoft.azure-mobile-services \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\mobi.roshka.cordova.callphone \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.calendar \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.camera \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.dialogs \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.file \
@@ -1053,6 +1054,10 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\com.microsoft.azure-mobile-services\www\MobileServices.Web.min.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\mobi.roshka.cordova.callphone\www \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\mobi.roshka.cordova.callphone\www\callphone.js \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.calendar\test \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.calendar\www \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.calendar\test\tests.js \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.calendar\www\Calendar.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.camera\www \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\Camera.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraConstants.js \
