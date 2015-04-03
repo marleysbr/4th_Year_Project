@@ -27,9 +27,6 @@
         <param name="android-package" value="mobi.roshka.cordova.callphone.CallPhone" />
     </feature>
     <icon height="80" src="www/img/logo.png" width="80" />
-    <splash height="480" src="www/img/logo.png" width="320" />
-    <preference name="SplashScreen" value="www/img/logo.png" />
-    <preference name="SplashScreenDelay" value="100000" />
     <name>Church Locator</name>
     <description>
         An app that locates Churches.

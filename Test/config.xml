@@ -1,9 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.marleysbr.TestApp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
-    <preference name="SplashScreen" value="www/img/logo.png" />
-    <preference name="SplashScreenDelay" value="100000" />
-
     <name>Church Locator</name>
     <description>
         An app that locates Churches.
@@ -25,7 +22,6 @@
 
     <platform name="android">
         <icon src="www/img/logo.png" width="80" height="80" />
-        <splash src="www/img/logo.png" width="320" height="480"/>
     </platform>
 
 </widget>

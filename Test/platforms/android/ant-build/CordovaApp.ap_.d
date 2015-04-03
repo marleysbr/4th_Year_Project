@@ -1,5 +1,6 @@
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\CordovaApp.ap_ \
  : C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\res\drawable\icon.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\res\drawable\screen.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\res\drawable-hdpi\ic_action_next_item.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\res\drawable-hdpi\ic_action_previous_item.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\res\drawable-hdpi\ic_action_remove.png \
@@ -15,6 +16,7 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\res\dra
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\res\values\strings.xml \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\res\xml\config.xml \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\res\drawable\icon.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\res\drawable\screen.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\res\drawable-hdpi\ic_action_next_item.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\res\drawable-hdpi\ic_action_previous_item.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\res\drawable-hdpi\ic_action_remove.png \
@@ -47,6 +49,7 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons.svg \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\loader.gif \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\loadingPage.GIF \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\logo.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\map.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\mass.png \

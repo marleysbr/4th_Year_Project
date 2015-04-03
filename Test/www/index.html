@@ -20,15 +20,10 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
-    <script type="text/javascript"
-            src="http://maps.googleapis.com/maps/api/js?sensor=false">
-    </script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="lib/jquery-2.0.3.js"></script>
     <script src="js/jquery.swipebox.js"></script>
-
-    <script>
-
-    </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 
     <script>
         $( document ).ready(function() {
@@ -41,13 +36,21 @@
                 $("#result_list").empty();
                 $(".disable").prop("disabled", false);
             });
-
         });
+    </script>
+
+
+    <script>
+    $(window).load(function() {
+        $(".se-pre-con").fadeOut("slow");;
+    });
     </script>
 
 </head>
 
 <body>
+
+<div class="se-pre-con"></div>
 
 <script>
     $(document).bind("mobileinit", function(){
@@ -85,7 +88,7 @@
 
     <div data-role="header" data-position="fixed">
         <h1>Church Locator</h1>
-        <a href="#menu" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left">Menu</a>
+        <a href="#menu" class="ui-btn ui-btn-inline ui-icon-grid ui-btn-icon-left">Menu</a>
     </div>
 
     <div class="ui-content" role="main">
@@ -114,7 +117,7 @@
 <div data-role="page" id="dailyReadings">
 
     <div data-role="header" data-position="fixed">
-        <h1>Daily Readings</h1><a href="#home" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
+        <h1>Daily Readings</h1><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Home </a>
     </div>
 
     <div id="readings" class="ui-content" role="main">
@@ -150,7 +153,7 @@
 <div data-role="page" id="pictures">
 
     <div data-role="header" data-position="fixed">
-        <a href="#home" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
+        <a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Home </a>
         <h1>All Pictures</h1>
     </div>
 
@@ -164,7 +167,7 @@
 
 <div data-role="page" id="listOfChurches">
     <div data-role="header" data-position="fixed">
-        <h1>List of Churches</h1><a href="#home" class="ui-btn-left enableAndClear" data-transition="slide" data-direction="reverse"> < </a>
+        <h1>List of Churches</h1><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left enableAndClear" data-transition="slide" data-direction="reverse"> Home </a>
     </div>
 
     <div class="ui-content" role="main">
@@ -187,15 +190,11 @@
 <div data-role="page" id="churchDetailsFromMap">
     <div data-role="header" data-position="fixed">
         <h1>Church Details</h1>
-        <a href="#home" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
-        <a href="#options1" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-right">Options</a>
+        <a href="#map" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Map </a>
+        <a href="#options1" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-right">Options</a>
     </div>
 
     <div class="ui-content" role="main">
-
-        <a href="#map" data-transition="slide" data-direction="reverse"> Return to Map </a>
-
-        <br />
 
         <div id="details1">
             <div>
@@ -208,14 +207,9 @@
                     <p id="churchWeekdayMass1"></p>
                     <p id="churchWeekendMass1"></p>
                 </div>
-
-                <!--<button onclick="">Get Directions</button>
-                <button onclick="takePicture1();">New picture</button>
-                <button onclick="getPicture1();">Select from Gallery</button>
-                <button onclick="viewUploadedPictures();">View uploaded pictures</button>-->
-
             </div>
         </div>
+
     </div>
 
 
@@ -239,13 +233,11 @@
 <div data-role="page" id="churchDetails">
     <div data-role="header" data-position="fixed">
         <h1>Church Details</h1>
-        <a href="#home" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
-        <a href="#options" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-right">Options</a>
+        <a href="#listOfChurches" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left" data-transition="slide" data-direction="reverse"> List </a>
+        <a href="#options" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-right">Options</a>
     </div>
 
     <div class="ui-content" role="main">
-
-        <a href="#listOfChurches" data-transition="slide" data-direction="reverse"> Return to List </a>
 
         <div id="details">
             <div>
@@ -258,11 +250,6 @@
                     <p id="churchWeekdayMass"></p>
                     <p id="churchWeekendMass"></p>
                 </div>
-
-                <!--<button onclick="viewUploadedPictures();">View uploaded pictures</button>
-                <button onclick="takePicture();">New picture</button>
-                <button onclick="getPicture();">Select from Gallery</button>-->
-
             </div>
         </div>
 
@@ -289,21 +276,17 @@
 <div data-role="page" id="mapWithChurch">
 
     <div data-role="header" data-position="fixed">
-        <h1>Map</h1><a href="#churchDetails" onclick="clearWatch1()" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
+        <h1>Map</h1><a href="#churchDetails" onclick="clearWatch1()" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Details </a>
     </div>
 
-    <div class="ui-content" role="main" id="map_canvas1">
-
-
-
-    </div>
+    <div class="ui-content" role="main" id="map_canvas1"> <!-- Map goes here --> </div>
 
 </div>
 
 <div data-role="page" id="map">
 
     <div data-role="header" data-position="fixed">
-        <h1>Map</h1><a href="#home" onclick="clearWatch1()" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
+        <h1>Map</h1><a href="#home" onclick="clearWatch1()" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Home </a>
     </div>
 
     <div class="ui-content" role="main" id="map_canvas">
@@ -317,7 +300,7 @@
 <div data-role="page" id="nearYou">
 
     <div data-role="header" data-position="fixed">
-        <h1>Masses Near You</h1><a href="#home" class="enableAndClear" onclick="clearWatch1()" class="ui-btn-left" data-transition="slide" data-direction="reverse"> < </a>
+        <h1>Masses Near You</h1><a href="#home" onclick="clearWatch1()" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left enableAndClear" data-transition="slide" data-direction="reverse"> Home </a>
     </div>
 
     <br />
@@ -336,7 +319,6 @@
 
 <script type="text/javascript" src="../platform/js/libs/cordova.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="lib/fastclick/js/fastclick.js"></script>
 <script type="text/javascript" src="lib/handlebars/js/handlebars-v1.3.0.js"></script>
 <script type="text/javascript" src="js/MobileServices.Web-1.2.5.js"></script>
 

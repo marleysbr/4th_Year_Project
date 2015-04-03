@@ -12,7 +12,7 @@ appomat.app = {
     },
 
     onDeviceReady: function() {
-        FastClick.attach(document.body);
+        //FastClick.attach(document.body);
         pictureSource = navigator.camera.PictureSourceType;
         destinationType = navigator.camera.DestinationType;
     }
