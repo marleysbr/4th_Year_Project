@@ -43,6 +43,10 @@
                         {
                             "xml": "<feature name=\"Calendar\"><param name=\"android-package\" value=\"nl.xservices.plugins.Calendar\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Toast\"><param name=\"android-package\" value=\"nl.xservices.plugins.Toast\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -106,6 +110,9 @@
             "PACKAGE_NAME": "com.marleysbr.TestApp"
         },
         "nl.x-services.plugins.calendar": {
+            "PACKAGE_NAME": "com.marleysbr.TestApp"
+        },
+        "nl.x-services.plugins.toast": {
             "PACKAGE_NAME": "com.marleysbr.TestApp"
         }
     },

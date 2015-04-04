@@ -74,7 +74,6 @@
         {
 
             var listItems = $('#result_listNear').children('li').remove();
-            //var elems = $('#result_listNear').children('li').remove();
             listItems.each(function() {
                 if(this.id <= newValue) {
                     $('#result_listNear').append(this);
@@ -83,7 +82,6 @@
 
         }
     </script>
-
 
 
 </head>
@@ -236,20 +234,18 @@
 
     <div class="ui-content" role="main">
 
-        <div id="details1">
-            <div>
-                <div id="churchDetail1">
-                    <h3 id="churchName1"></h3>
-                    <p id="churchAddress1"></p>
-                    <p id="churchCity1"></p>
-                    <p id="churchCounty1"></p>
-                    <p id="churchTelephone1"></p>
-                    <p id="churchWeekdayMass1"></p>
-                    <p id="churchWeekendMass1"></p>
-                </div>
-            </div>
-        </div>
+        <div id="myDiv1" class="background-image">
 
+        </div>
+        <div class="content" id="details1">
+            <h3 id="churchName1"></h3>
+            <p id="churchAddress1"></p>
+            <p id="churchCity1"></p>
+            <p id="churchCounty1"></p>
+            <p id="churchTelephone1"></p>
+            <p id="churchWeekdayMass1"></p>
+            <p id="churchWeekendMass1"></p>
+        </div>
     </div>
 
 
@@ -271,17 +267,21 @@
 </div>
 
 <div data-role="page" id="churchDetails">
+
     <div data-role="header" data-position="fixed">
         <h1>Church Details</h1>
         <a href="#listOfChurches" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left" data-transition="slide" data-direction="reverse"> List </a>
         <a href="#options" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-right">Options</a>
     </div>
 
+
+
     <div class="ui-content" role="main">
 
-        <div id="details">
-            <div>
-                <div id="churchDetail">
+        <div id="myDiv" class="background-image">
+
+        </div>
+            <div class="content" id="details">
                     <h3 id="churchName"></h3>
                     <p id="churchAddress"></p>
                     <p id="churchCity"></p>
@@ -289,14 +289,12 @@
                     <p id="churchTelephone"></p>
                     <p id="churchWeekdayMass"></p>
                     <p id="churchWeekendMass"></p>
-                </div>
             </div>
-        </div>
-
     </div>
 
 
-    <div data-role="panel" id="options" data-position="right">
+
+    <div data-role="panel" id="options" data-position="right" data-display="reveal">
         <ul data-role="listview" data-inset="true" class="ui-alt-icon">
             <li data-role="list-divider">Navigation</li>
             <li><a onclick="redirectToChurchMap()" href="#"><img src="img/icons/map1.png" class="ui-li-icon">Show on Map</a></li>

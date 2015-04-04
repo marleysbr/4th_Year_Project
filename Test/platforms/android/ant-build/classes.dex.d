@@ -21,6 +21,8 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-bui
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\classes\nl\xservices\plugins\accessor\CalendarProviderAccessor.class \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\classes\nl\xservices\plugins\accessor\LegacyCalendarAccessor.class \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\classes\nl\xservices\plugins\Calendar.class \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\classes\nl\xservices\plugins\Toast$1.class \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\classes\nl\xservices\plugins\Toast.class \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\classes\org\apache\cordova\camera\CameraLauncher.class \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\classes\org\apache\cordova\camera\ExifHelper.class \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\ant-build\classes\org\apache\cordova\camera\FileHelper.class \

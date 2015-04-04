@@ -35,16 +35,62 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\cordova.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\cordova_plugins.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\css \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\index.html \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\lib \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\login.html \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\css\index.css \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\css\style.css \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\css\swipebox.css \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\css\swipebox.min.css \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\bg (1).jpg \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\bg.jpg \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\icons.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\mem.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\mem2.jpg \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab.htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\s-colr.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\tick.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\cb=gapi.loaded_0 \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\dn.js \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\favicons \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\favicons(1) \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\favicons(2) \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\favicons(3) \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\favicons(4) \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\favicons(5) \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\favicons(6) \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\favicons(7) \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\logo11w.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\rs=AItRSTME1S6kXvtQH9VG79Cg4ZjugnGEbQ \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\rs=AItRSTMKqc5EiNNaX4OO0TyVLnbu3Vc0Ag \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\rs=AItRSTMKqc5EiNNaX4OO0TyVLnbu3Vc0Ag(1) \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\saved_resource.htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\thumbnail(1).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\thumbnail(2).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\thumbnail(3).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\thumbnail(4).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\thumbnail(5).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\thumbnail(6).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\thumbnail(7).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\thumbnail.htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\title(1).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\title(2).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\title(3).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\title(4).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\title(5).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\title(6).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\title(7).htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\title.htm \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\webpagethumbnail \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\New Tab_files\webpagethumbnail(1) \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\about.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\church.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\defaultbackground.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons.svg \
@@ -66,6 +112,7 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\js\index.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\js\jquery.swipebox.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\js\jquery.swipebox.min.js \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\js\login.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\js\MobileServices.Web-1.2.5.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\lib\fastclick \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\lib\handlebars \
@@ -1043,6 +1090,7 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\com.microsoft.azure-mobile-services \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\mobi.roshka.cordova.callphone \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.calendar \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.toast \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.camera \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.dialogs \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.file \
@@ -1058,6 +1106,10 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.calendar\www \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.calendar\test\tests.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.calendar\www\Calendar.js \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.toast\test \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.toast\www \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.toast\test\tests.js \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\nl.x-services.plugins.toast\www\Toast.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.camera\www \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\Camera.js \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraConstants.js \

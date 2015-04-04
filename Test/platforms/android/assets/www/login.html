@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Church Locator - Login</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+
+    <!-----start-main---->
+    <div class="login-form">
+        <div class="head">
+            <img src="images/mem2.jpg" alt=""/>
+
+        </div>
+        <form name="loginForm" onsubmit="validateForm();" method="post">
+            <li>
+                <input type="text" class="text" placeholder="Username" required="" name="usr" id="username" onblur="if (this.value == '') {this.value = 'USERNAME';}" ><a href="#" class=" icon user"></a>
+            </li>
+            <li>
+                <input type="password" placeholder="Password" required="" name="pword" id="password" onblur="if (this.value == '') {this.value = 'Password';}"><a href="#" class=" icon lock"></a>
+            </li>
+            <div class="p-container">
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked><i></i>Remember Me</label>
+                <input type="submit" value="SIGN IN" >
+                <div class="clear"> </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var un = document.loginForm.usr.value;
+            var pw = document.loginForm.pword.value;
+            var username = "username";
+            var password = "password";
+            if ((un == username) && (pw == password)) {
+                document.loginForm.action ="index.html";
+                return true;
+            }
+            else {
+                alert ("Login was unsuccessful, please check your username and password");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>

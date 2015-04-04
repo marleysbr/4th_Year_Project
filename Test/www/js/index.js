@@ -32,7 +32,7 @@ function getChurches() {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xmlhttp.async = false;
-    xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/xmlDatabase.php", false);
+    xmlhttp.open("GET", "http://www.churchfinderireland.com/xmlDatabase.php", false);
     xmlhttp.send();
     xmlDoc = xmlhttp.responseXML;
 
@@ -45,7 +45,7 @@ function getChurches() {
         churchCity = xmlDoc.getElementsByTagName("city")[i].childNodes[0].nodeValue;
         churchCounty = xmlDoc.getElementsByTagName("county")[i].childNodes[0].nodeValue;
 
-        $("#result_list").append("<li id=" +churchID+ " class='test'><a href='#churchDetails'><h3>" + churchName + "</h3> <p><b>► City:</b> " + churchCity +" &nbsp;  &nbsp; <b>► County: </b>" + churchCounty + " </p> </a></li>");
+        $("#result_list").append("<li id=" +churchID+ " class='test'><a href='#churchDetails'><h3>" + churchName + "</h3> <p><b>- City:</b> " + churchCity +" &nbsp;  &nbsp; <b>- County: </b>" + churchCounty + " </p> </a></li>");
 
         $("#result_list").listview("refresh");
 
@@ -70,7 +70,7 @@ function getPicture() {
 }
 
 function uploadImage(imageData) {
-    var serverURL = "http://marlan4thyearproject.comli.com/uploadPicture.php?id=" +churchID;
+    var serverURL = "http://www.churchfinderireland.com/uploadPicture.php?id=" +churchID;
     var options = new FileUploadOptions();
     options.fileKey = 'file';
     options.fileName = imageData.substr(imageData.lastIndexOf('/')+1);
@@ -93,7 +93,7 @@ function onSuccess(imageData) {
     //image.src = imageData;
     uploadImage(imageData);
 
-    server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
+    server = "http://www.churchfinderireland.com/uploadPicture.php";
 }
 
 function onFail(message) {
@@ -143,7 +143,7 @@ function viewUploadedPictures() {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xmlhttp.async = false;
-    xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/getPictures.php?id=" +churchID, false);
+    xmlhttp.open("GET", "http://www.churchfinderireland.com/getPictures.php?id=" +churchID, false);
     xmlhttp.send();
     xmlDoc = xmlhttp.responseXML;
 
@@ -170,7 +170,7 @@ function getAllPictures() {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xmlhttp.async = false;
-    xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/getAllPictures.php", false);
+    xmlhttp.open("GET", "http://www.churchfinderireland.com/getAllPictures.php", false);
     xmlhttp.send();
     xmlDoc = xmlhttp.responseXML;
 
@@ -196,7 +196,7 @@ function getDetails(id) {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xmlhttp.async = false;
-    xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/xmlChurch.php?id=" +id, false);
+    xmlhttp.open("GET", "http://www.churchfinderireland.com/xmlChurch.php?id=" +id, false);
     xmlhttp.send();
     xmlDoc = xmlhttp.responseXML;
 
@@ -206,9 +206,7 @@ function getDetails(id) {
     churchCity = xmlDoc.getElementsByTagName("city")[0].childNodes[0].nodeValue;
     churchCounty = xmlDoc.getElementsByTagName("county")[0].childNodes[0].nodeValue;
     churchTelephone = xmlDoc.getElementsByTagName("telephone")[0].childNodes[0].nodeValue;
-
     churchTelephone.replace(/\s+/g, '');
-
     churchCoordinates = xmlDoc.getElementsByTagName("coordinates")[0].childNodes[0].nodeValue;
     churchWeekdayMass = xmlDoc.getElementsByTagName("weekdayMass")[0].childNodes[0].nodeValue;
     churchWeekendMass = xmlDoc.getElementsByTagName("weekendMass")[0].childNodes[0].nodeValue;
@@ -224,6 +222,32 @@ function getDetails(id) {
     churchLat = churchCoordinates.split(',')[0].split(' ').pop();
     churchLong = churchCoordinates.substr(churchCoordinates.indexOf(",") + 1);
     churchLong = churchLong.replace(/\s+/g, '');
+
+
+    // Get Background Image
+    if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp1 = new XMLHttpRequest();
+    }
+    else {  // code for IE6, IE5
+        xmlhttp1 = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp1.async = false;
+    xmlhttp1.open("GET", "http://www.churchfinderireland.com/getPictures.php?id=" +churchID, false);
+    xmlhttp1.send();
+    xmlDoc1 = xmlhttp1.responseXML;
+
+    churchLength1 = xmlDoc1.getElementsByTagName("Image").length;
+
+
+
+    if(churchLength1 >= 1) {
+        filePath = xmlDoc1.getElementsByTagName("filePath")[0].childNodes[0].nodeValue;
+        document.getElementById("myDiv").style.backgroundImage = "url('"+filePath+"')";
+    }
+    else if (churchLength1 == 0) {
+        document.getElementById("myDiv").style.backgroundImage = "url('img/defaultbackground.png')";
+    }
+
 }
 
 function getDetailsFromMap(id) {
@@ -235,7 +259,7 @@ function getDetailsFromMap(id) {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xmlhttp.async = false;
-    xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/xmlChurch.php?id=" +id, false);
+    xmlhttp.open("GET", "http://www.churchfinderireland.com/xmlChurch.php?id=" +id, false);
     xmlhttp.send();
     xmlDoc = xmlhttp.responseXML;
 
@@ -261,7 +285,29 @@ function getDetailsFromMap(id) {
     churchLong = churchCoordinates.substr(churchCoordinates.indexOf(",") + 1);
     churchLong = churchLong.replace(/\s+/g, '');
 
-    document.getElementById('changeCoordinates').innerHTML = '<button onclick="redirectToChurchMap();">Show on Map</button>';
+
+    // Get Background Image
+    if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp1 = new XMLHttpRequest();
+    }
+    else {  // code for IE6, IE5
+        xmlhttp1 = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp1.async = false;
+    xmlhttp1.open("GET", "http://www.churchfinderireland.com/getPictures.php?id=" +churchID, false);
+    xmlhttp1.send();
+    xmlDoc1 = xmlhttp1.responseXML;
+
+    churchLength1 = xmlDoc1.getElementsByTagName("Image").length;
+
+    if(churchLength1 >= 1) {
+        filePath = xmlDoc1.getElementsByTagName("filePath")[0].childNodes[0].nodeValue;
+        document.getElementById("myDiv1").style.backgroundImage = "url('"+filePath+"')";
+    }
+    else if (churchLength1 == 0) {
+        document.getElementById("myDiv1").style.backgroundImage = "url('img/defaultbackground.png')";
+    }
+
 }
 
 function getLocation() {
@@ -293,7 +339,7 @@ function showMap(position) {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xmlhttp.async = false;
-    xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/xmlDatabase.php", false);
+    xmlhttp.open("GET", "http://www.churchfinderireland.com/xmlDatabase.php", false);
     xmlhttp.send();
     xmlDoc = xmlhttp.responseXML;
 
@@ -461,7 +507,7 @@ function getNearMass(value) {
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
         xmlhttp.async = false;
-        xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/xmlDatabase.php", false);
+        xmlhttp.open("GET", "http://www.churchfinderireland.com/xmlDatabase.php", false);
         xmlhttp.send();
         xmlDoc = xmlhttp.responseXML;
 
@@ -527,7 +573,7 @@ function getDetails2(id) {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xmlhttp.async = false;
-    xmlhttp.open("GET", "http://marlan4thyearproject.comli.com/xmlChurch.php?id=" +id, false);
+    xmlhttp.open("GET", "http://www.churchfinderireland.com/xmlChurch.php?id=" +id, false);
     xmlhttp.send();
     xmlDoc = xmlhttp.responseXML;
 

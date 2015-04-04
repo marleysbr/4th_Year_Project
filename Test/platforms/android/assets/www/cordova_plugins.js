@@ -94,6 +94,17 @@ module.exports = [
         "id": "nl.x-services.plugins.calendar.tests"
     },
     {
+        "file": "plugins/nl.x-services.plugins.toast/www/Toast.js",
+        "id": "nl.x-services.plugins.toast.Toast",
+        "clobbers": [
+            "window.plugins.toast"
+        ]
+    },
+    {
+        "file": "plugins/nl.x-services.plugins.toast/test/tests.js",
+        "id": "nl.x-services.plugins.toast.tests"
+    },
+    {
         "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
         "id": "org.apache.cordova.inappbrowser.inappbrowser",
         "clobbers": [
@@ -260,6 +271,7 @@ module.exports.metadata =
     "org.apache.cordova.file-transfer": "0.5.0",
     "mobi.roshka.cordova.callphone": "0.0.1",
     "nl.x-services.plugins.calendar": "4.3.0",
+    "nl.x-services.plugins.toast": "2.0.4",
     "org.apache.cordova.inappbrowser": "0.5.3",
     "org.apache.cordova.file": "1.3.1"
 }
