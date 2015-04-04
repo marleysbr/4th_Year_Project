@@ -40,11 +40,11 @@
     <author email="marleysbr@gmail.com" href="http://facebook.com/marleyscr10">
         Marleys
     </author>
-    <content src="index.html" />
+    <content src="login.html" />
     <access origin="*" />
     <access origin="http://31.170.160.87*" />
     <access launch-external="yes" origin="tel:*" />
-    <access origin="http://marlan4thyearproject.comli.com/" subdomains="true" />
+    <access origin="http://www.churchfinderireland.com//" subdomains="true" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#595b5b" />
 </widget>
