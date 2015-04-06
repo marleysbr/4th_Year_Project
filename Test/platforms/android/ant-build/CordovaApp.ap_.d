@@ -42,12 +42,14 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\lib \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\login.html \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\plugins \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\register.html \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\css\index.css \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\css\style.css \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\css\swipebox.css \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\css\swipebox.min.css \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\bg (1).jpg \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\bg.jpg \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\email.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\icons.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\mem.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\images\mem2.jpg \
@@ -106,6 +108,7 @@ C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\church.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\exit.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\gallery.png \
+C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\logOut.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\map.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\map1.png \
 C:\Users\Marlan\Documents\GitHub\4th_Year_Project\Test\platforms\android\assets\www\img\icons\pictures.png \

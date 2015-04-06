@@ -32,6 +32,9 @@
 
     <script>
         $( document ).ready(function() {
+
+
+
             $('.disable').click(function(){
                 $(this).prop('disabled', true);
                 $(this).hide();
@@ -76,8 +79,7 @@
     </script>
 
     <script type="text/javascript">
-        function showValue(newValue)
-        {
+        function showValue(newValue) {
 
             var listItems = $('#result_listNear').children('li').remove();
             listItems.each(function() {
@@ -89,10 +91,21 @@
         }
     </script>
 
+    <script>
+        function getUser() {
+            if(window.localStorage["username"] == null){
+                document.location.href = "login.html";
+            }
+            else {
+                document.getElementById("userLoggedIn").innerHTML = "<li>Welcome, <b>" + window.localStorage["username"] + "</b></li>";
+            }
+        }
+    </script>
+
 
 </head>
 
-<body>
+<body onload="getUser();">
 
 <div class="se-pre-con"></div>
 
@@ -136,6 +149,7 @@
     </div>
 
     <div data-role="panel" id="menu">
+        <p style="text-align: center;" id="userLoggedIn"></p>
         <ul data-theme="a" data-role="listview" data-inset="true" class="ui-alt-icon">
             <li><a href="#listOfChurches"><img src="img/icons/church.png" class="ui-li-icon">List of Churches</a></li>
             <li><a href="#map"><img src="img/icons/map.png" class="ui-li-icon">Map</a></li>

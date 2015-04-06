@@ -21,7 +21,7 @@
         <img src="images/mem2.jpg" alt=""/>
 
     </div>
-    <form name="loginForm" onsubmit="logIn();">
+    <form name="loginForm">
         <li>
             <input placeholder="Username" id="username" type="text" ><a href="#" class=" icon user"></a>
         </li>
@@ -29,7 +29,7 @@
             <input placeholder="Email" id="email" type="text" ><a href="#" class="iconEmail email"></a>
         </li>
         <li>
-            <input placeholder="Password" id="password" type="password" ><a href="#" class=" icon lock"></a>
+            <input placeholder="Password (4 or more characters)" id="password" type="password" ><a href="#" class=" icon lock"></a>
         </li>
         <li>
             <input placeholder="Re-enter Password" id="passwordConfirmation" type="password" ><a href="#" class=" icon lock"></a>
@@ -37,7 +37,7 @@
 
         <p style="float:right;">Already registered? Click <a href="login.html">here</a> to login!</p><br /><br />
 
-        <a style="float:right;" class="register" href="register.html">SUBMIT</a>
+        <button style="float:right;" class="register" onclick="register();">SUBMIT</button>
     </form>
 </div>
 

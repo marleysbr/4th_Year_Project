@@ -9,7 +9,7 @@
         Marleys
     </author>
 
-    <content src="index.html" />
+    <content src="login.html" />
     <access origin="*" />
     <access origin="http://31.170.160.87*" />
     <access origin="tel:*" launch-external="yes" />

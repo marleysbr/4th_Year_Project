@@ -32,6 +32,9 @@
 
     <script>
         $( document ).ready(function() {
+
+
+
             $('.disable').click(function(){
                 $(this).prop('disabled', true);
                 $(this).hide();
@@ -48,6 +51,12 @@
             $('.disableUpdateButton').click(function(){
                 $(".updateResultsSlider").hide();
                 //$(".disable").show();
+            });
+
+            $( '.swipebox' ).swipebox({
+                useCSS : true,
+                hideCloseButtonOnMobile : false,
+                hideBarsOnMobile : false
             });
 
             var rangeInput = document.getElementById("rangeinput");
@@ -70,8 +79,7 @@
     </script>
 
     <script type="text/javascript">
-        function showValue(newValue)
-        {
+        function showValue(newValue) {
 
             var listItems = $('#result_listNear').children('li').remove();
             listItems.each(function() {
@@ -83,10 +91,21 @@
         }
     </script>
 
+    <script>
+        function getUser() {
+            if(window.localStorage["username"] == null){
+                document.location.href = "login.html";
+            }
+            else {
+                document.getElementById("userLoggedIn").innerHTML = "<li>Welcome, <b>" + window.localStorage["username"] + "</b></li>";
+            }
+        }
+    </script>
+
 
 </head>
 
-<body>
+<body onload="getUser();">
 
 <div class="se-pre-con"></div>
 
@@ -96,17 +115,6 @@
     });
 </script>
 
-<script type="text/javascript">
-    ;( function( $ ) {
-
-        $( '.swipebox' ).swipebox({
-            useCSS : true,
-            hideCloseButtonOnMobile : false,
-            hideBarsOnMobile : false
-        });
-
-    } )( jQuery );
-</script>
 
 <script>
     $( document ).on( "pageinit", "#home", function() {
@@ -141,12 +149,14 @@
     </div>
 
     <div data-role="panel" id="menu">
+        <p style="text-align: center;" id="userLoggedIn"></p>
         <ul data-theme="a" data-role="listview" data-inset="true" class="ui-alt-icon">
             <li><a href="#listOfChurches"><img src="img/icons/church.png" class="ui-li-icon">List of Churches</a></li>
             <li><a href="#map"><img src="img/icons/map.png" class="ui-li-icon">Map</a></li>
             <li><a href="#pictures"><img src="img/icons/camera.png" class="ui-li-icon">Pictures</a></li>
             <li><a href="#about"><img src="img/icons/about.png" class="ui-li-icon">About</a></li>
-            <li class='exit'><a href="" onclick="exitFromApp();"><img src="img/icons/exit.png" class="ui-li-icon">Exit</a></li>
+            <li><a href="" onclick="logOut();"><img src="img/icons/logOut.png" class="ui-li-icon">Log Out</a></li>
+            <li><a href="" onclick="exitFromApp();"><img src="img/icons/exit.png" class="ui-li-icon">Exit</a></li>
         </ul>
     </div>
 

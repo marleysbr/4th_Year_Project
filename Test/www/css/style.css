@@ -29,7 +29,6 @@ img{max-width:100%;}
 /*end reset*/
 /****-----start-body----****/
 body{
-    background:url(../images/bg.jpg)  no-repeat center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Login-Animated Website Template | Home :: w3layouts</title>
+    <meta charset="utf-8">
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="js/login.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--webfonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <!--//webfonts-->
+    <script src="lib/jquery-mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+</head>
+<body onload="checkPreAuth();">
+
+<!-----start-main---->
+<div data-role="page" id="home" id="loginPage" class="login-form">
+    <div class="head">
+        <img src="images/mem2.jpg" alt=""/>
+
+    </div>
+    <form name="loginForm">
+        <li>
+            <input placeholder="Username" id="username" type="text" ><a href="#" class=" icon user"></a>
+        </li>
+        <li>
+            <input placeholder="Email" id="email" type="text" ><a href="#" class="iconEmail email"></a>
+        </li>
+        <li>
+            <input placeholder="Password (4 or more characters)" id="password" type="password" ><a href="#" class=" icon lock"></a>
+        </li>
+        <li>
+            <input placeholder="Re-enter Password" id="passwordConfirmation" type="password" ><a href="#" class=" icon lock"></a>
+        </li>
+
+        <p style="float:right;">Already registered? Click <a href="login.html">here</a> to login!</p><br /><br />
+
+        <button style="float:right;" class="register" onclick="register();">SUBMIT</button>
+    </form>
+</div>
+
+<!--//End-login-form-->
+
+</body>
+</html>
+

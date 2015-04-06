@@ -21,20 +21,17 @@
         <img src="images/mem2.jpg" alt=""/>
 
     </div>
-    <form name="loginForm" onsubmit="logIn();">
+    <form name="loginForm">
         <li>
-            <input id="username" type="text" class="text" value="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'username';}" ><a href="#" class=" icon user"></a>
+            <input placeholder="Username" id="username" type="text" ><a href="#" class=" icon user"></a>
         </li>
         <li>
-            <input id="password" type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"><a href="#" class=" icon lock"></a>
-        </li>
-        <li>
-            <input id="passwordConfirmation" type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"><a href="#" class=" icon lock"></a>
+            <input placeholder="Password" id="password" type="password" ><a href="#" class=" icon lock"></a>
         </li>
 
         <a style="float:left;" class="register" href="register.html">REGISTER</a>
 
-        <a style="float:right;" class="register" onclick="logIn()" href="#">SIGN IN</a>
+        <button style="float:right;" class="register" onclick="logIn()">SIGN IN</button>
 
 
     </form>
