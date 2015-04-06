@@ -50,6 +50,12 @@
                 //$(".disable").show();
             });
 
+            $( '.swipebox' ).swipebox({
+                useCSS : true,
+                hideCloseButtonOnMobile : false,
+                hideBarsOnMobile : false
+            });
+
             var rangeInput = document.getElementById("rangeinput");
 
             rangeInput.addEventListener('mouseup', function() {
@@ -96,17 +102,6 @@
     });
 </script>
 
-<script type="text/javascript">
-    ;( function( $ ) {
-
-        $( '.swipebox' ).swipebox({
-            useCSS : true,
-            hideCloseButtonOnMobile : false,
-            hideBarsOnMobile : false
-        });
-
-    } )( jQuery );
-</script>
 
 <script>
     $( document ).on( "pageinit", "#home", function() {
@@ -146,7 +141,8 @@
             <li><a href="#map"><img src="img/icons/map.png" class="ui-li-icon">Map</a></li>
             <li><a href="#pictures"><img src="img/icons/camera.png" class="ui-li-icon">Pictures</a></li>
             <li><a href="#about"><img src="img/icons/about.png" class="ui-li-icon">About</a></li>
-            <li class='exit'><a href="" onclick="exitFromApp();"><img src="img/icons/exit.png" class="ui-li-icon">Exit</a></li>
+            <li><a href="" onclick="logOut();"><img src="img/icons/logOut.png" class="ui-li-icon">Log Out</a></li>
+            <li><a href="" onclick="exitFromApp();"><img src="img/icons/exit.png" class="ui-li-icon">Exit</a></li>
         </ul>
     </div>
 

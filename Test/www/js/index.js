@@ -23,6 +23,12 @@ function exitFromApp() {
     navigator.app.exitApp();
 }
 
+function logOut() {
+    localStorage.removeItem("username");
+    localStorage.removeItem("password");
+    document.location.href = "login.html";
+}
+
 function getChurches() {
 
     if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari

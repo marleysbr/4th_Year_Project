@@ -37,8 +37,10 @@
             password1 = xmlDoc.getElementsByTagName("password")[0].childNodes[0].nodeValue;
 
             if(un == username1 && pw == password1) {
-                alert("Logging in...");
+                //alert("Logging in...");
                 document.loginForm.action = "index.html";
+                window.localStorage["username"] = un;
+                window.localStorage["password"] = pw;
             }
             else {
                 alert("Error...");

@@ -5,79 +5,43 @@
     <title>The Login-Animated Website Template | Home :: w3layouts</title>
     <meta charset="utf-8">
     <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="js/login.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--webfonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,300,600,700' rel='stylesheet' type='text/css'>
     <!--//webfonts-->
+    <script src="lib/jquery-mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
 </head>
-<body>
-
-<script>
-    function validateForm() {
-
-        var un = document.loginForm.username.value;
-        var pw = document.loginForm.password.value;
-
-        if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        }
-        else {  // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.async = false;
-        xmlhttp.open("GET", "http://www.churchfinderireland.com/login.php?username=" +un+ "&password=" +pw, false);
-        xmlhttp.send();
-        xmlDoc = xmlhttp.responseXML;
-
-        userLength = xmlDoc.getElementsByTagName("Details").length;
-
-        if(userLength == 1) {
-            username1 = xmlDoc.getElementsByTagName("username")[0].childNodes[0].nodeValue;
-            password1 = xmlDoc.getElementsByTagName("password")[0].childNodes[0].nodeValue;
-
-            if(un == username1 && pw == password1) {
-                alert("Logging in...");
-                document.loginForm.action = "index.html";
-            }
-            else {
-                alert("Error...");
-            }
-        }
-        else {
-            alert("Login Error - Check Details and try again");
-        }
-
-
-
-    }
-</script>
+<body onload="checkPreAuth();">
 
 <!-----start-main---->
-<div class="login-form">
+<div data-role="page" id="home" id="loginPage" class="login-form">
     <div class="head">
         <img src="images/mem2.jpg" alt=""/>
 
     </div>
-    <form name="loginForm" onsubmit="validateForm();">
+    <form name="loginForm" onsubmit="logIn();">
         <li>
             <input id="username" type="text" class="text" value="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'username';}" ><a href="#" class=" icon user"></a>
         </li>
         <li>
             <input id="password" type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"><a href="#" class=" icon lock"></a>
         </li>
-        <div class="p-container">
-            <input type="submit" value="SIGN IN" >
-            <div class="clear"> </div>
-        </div>
+        <li>
+            <input id="passwordConfirmation" type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"><a href="#" class=" icon lock"></a>
+        </li>
+
+        <a style="float:left;" class="register" href="register.html">REGISTER</a>
+
+        <a style="float:right;" class="register" onclick="logIn()" href="#">SIGN IN</a>
+
+
     </form>
 </div>
+
 <!--//End-login-form-->
-<!-----start-copyright---->
-<div class="copy-right">
-    <p>Template by <a href="http://w3layouts.com">w3layouts</a></p>
-</div>
-<!-----//end-copyright---->
+
 
 </body>
 </html>
