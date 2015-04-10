@@ -4,6 +4,7 @@ function checkPreAuth() {
         document.getElementById("username").value = window.localStorage["username"];
         document.getElementById("password").value = window.localStorage["password"];
         if( logIn() == true) {
+
             document.location.href = "index.html";
         }
         else {
@@ -38,6 +39,7 @@ function logIn() {
             if(un == username1 && pw == password1) {
                 window.localStorage["username"] = un;
                 window.localStorage["password"] = pw;
+
                 document.location.href = "index.html";
                 return true;
             }
@@ -89,6 +91,7 @@ function register() {
                     if (regState == "Completed") {
                         window.localStorage["username"] = un;
                         window.localStorage["password"] = pw;
+
                         document.location.href = "index.html";
                     }
                     else {

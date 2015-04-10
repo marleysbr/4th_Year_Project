@@ -31,6 +31,14 @@ function logOut() {
 
 function getChurches() {
 
+    window.plugins.toast.showShortBottom('Loading results...',
+        function(a){
+            console.log('toast success: ' + a)
+        },
+        function(b){
+            alert('toast error: ' + b)
+        });
+
     if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
     }
@@ -75,6 +83,14 @@ function getPicture() {
         sourceType : Camera.PictureSourceType.PHOTOLIBRARY });
 }
 
+function onSuccess(imageData) {
+    uploadImage(imageData);
+}
+
+function onFail(message) {
+    alert('Failed because ' +message);
+}
+
 function uploadImage(imageData) {
     var serverURL = "http://www.churchfinderireland.com/uploadPicture.php?id=" +churchID;
     var options = new FileUploadOptions();
@@ -92,53 +108,6 @@ function onUploadSuccess() {
 
 function onUploadFail() {
     alert("Picture Upload Failed");
-}
-
-function onSuccess(imageData) {
-    //var image = document.getElementById('camera_image');
-    //image.src = imageData;
-    uploadImage(imageData);
-
-    server = "http://www.churchfinderireland.com/uploadPicture.php";
-}
-
-function onFail(message) {
-    alert('Failed because ' +message);
-}
-
-function takePicture1() {
-    navigator.camera.getPicture(onSuccess1, onFail1, { quality: 50,
-        destinationType: Camera.DestinationType.FILE_URI,
-        sourceType : Camera.PictureSourceType.CAMERA });
-}
-
-function getPicture1() {
-    navigator.camera.getPicture(onSuccess1, onFail1, { quality: 50,
-        destinationType: Camera.DestinationType.FILE_URI,
-        sourceType : Camera.PictureSourceType.PHOTOLIBRARY });
-}
-
-/*function uploadImage1(imageData) {
-    var serverURL = "http://marlan4thyearproject.comli.com/uploadPicture.php?id=" +churchID;
-    var options = new FileUploadOptions();
-    options.fileKey = 'file';
-    options.fileName = imageData.substr(imageData.lastIndexOf('/')+1);
-    options.mimeType = "image/jpeg";
-
-    var ft = new FileTransfer();
-    ft.upload(imageData, serverURL, onUploadSuccess, onUploadFail, options);
-}*/
-
-function onSuccess1(imageData) {
-    //var image = document.getElementById('camera_image1');
-    //image.src = imageData;
-    uploadImage(imageData);
-
-    //server = "http://marlan4thyearproject.comli.com/uploadPicture.php";
-}
-
-function onFail1(message) {
-    alert('Failed because ' +message);
 }
 
 function viewUploadedPictures() {
@@ -195,6 +164,15 @@ function getAllPictures() {
 }
 
 function getDetails(id) {
+
+    window.plugins.toast.showShortBottom('Loading ...',
+        function(a){
+            console.log('toast success: ' + a)
+        },
+        function(b){
+            alert('toast error: ' + b)
+        });
+
     if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
     }
@@ -258,6 +236,14 @@ function getDetails(id) {
 
 function getDetailsFromMap(id) {
 
+    window.plugins.toast.showShortBottom('Loading ...',
+        function(a){
+            console.log('toast success: ' + a)
+        },
+        function(b){
+            alert('toast error: ' + b)
+        });
+
     if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
     }
@@ -317,6 +303,15 @@ function getDetailsFromMap(id) {
 }
 
 function getLocation() {
+
+    window.plugins.toast.showShortBottom('Loading map...',
+        function(a){
+            console.log('toast success: ' + a)
+        },
+        function(b){
+            alert('toast error: ' + b)
+        });
+
     watchID = navigator.geolocation.getCurrentPosition(showMap, onError, {enableHighAccuracy: true});
 }
 
@@ -500,6 +495,14 @@ function showMapChurch(lat, long) {
 
 function getNearMass(value) {
 
+    window.plugins.toast.showShortBottom('Loading results...',
+        function(a){
+            console.log('toast success: ' + a)
+        },
+        function(b){
+            alert('toast error: ' + b)
+    });
+
     $('#result_listNear').empty();
 
     watchID = navigator.geolocation.watchPosition(function a(position) {
@@ -543,8 +546,6 @@ function getNearMass(value) {
 
         }
 
-
-
         var newValue = value * 1;
 
         var listItems = $('#result_listNear').children('li').remove();
@@ -572,6 +573,15 @@ function getNearMass(value) {
 }
 
 function getDetails2(id) {
+
+    window.plugins.toast.showShortBottom('Loading ...',
+        function(a){
+            console.log('toast success: ' + a)
+        },
+        function(b){
+            alert('toast error: ' + b)
+        });
+
     if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
     }

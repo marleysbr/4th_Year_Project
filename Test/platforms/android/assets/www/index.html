@@ -33,8 +33,6 @@
     <script>
         $( document ).ready(function() {
 
-
-
             $('.disable').click(function(){
                 $(this).prop('disabled', true);
                 $(this).hide();
@@ -97,6 +95,13 @@
                 document.location.href = "login.html";
             }
             else {
+                window.plugins.toast.showShortBottom('Welcome ' + window.localStorage["username"],
+                        function(a){
+                            console.log('toast success: ' + a)
+                        },
+                        function(b){
+                            alert('toast error: ' + b)
+                        });
                 document.getElementById("userLoggedIn").innerHTML = "<li>Welcome, <b>" + window.localStorage["username"] + "</b></li>";
             }
         }
