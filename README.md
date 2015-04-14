@@ -1,6 +1,4 @@
-4th Year Project
-
-• Church Finder Ireland
+• 4th Year Project - Church Finder Ireland
 
 ================
 
