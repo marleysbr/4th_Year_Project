@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+    <title>Church Locator</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.0.min.css" />
+    <link rel="stylesheet" href="css/swipebox.css">
+
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
+
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>-->
+
+    <link rel="stylesheet" href="lib/jquery-mobile-1.4.5/jquery.mobile-1.4.5.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="lib/jquery-mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <!--<script src="lib/jquery-2.1.3.js"></script>-->
+    <script src="js/jquery.swipebox.js"></script>
+    <script src="lib/modernizr.js"></script>
+
+    <script>
+        $( document ).ready(function() {
+
+            $('.disable').click(function(){
+                $(this).prop('disabled', true);
+                $(this).hide();
+                $(".updateResultsSlider").show();
+            });
+
+            $('.enableAndClear').click(function(){
+                $("#result_listNear").empty();
+                $("#result_list").empty();
+                $(".disable").prop("disabled", false);
+                $(".disable").show();
+            });
+
+            $('.disableUpdateButton').click(function(){
+                $(".updateResultsSlider").hide();
+                //$(".disable").show();
+            });
+
+            $( '.swipebox' ).swipebox({
+                useCSS : true,
+                hideCloseButtonOnMobile : false,
+                hideBarsOnMobile : false
+            });
+
+            var rangeInput = document.getElementById("rangeinput");
+
+            rangeInput.addEventListener('mouseup', function() {
+                if (this.value > 0 && this.value < 5) {
+                    alert("First");
+                } else{
+                    alert("Second");
+                }
+            });
+        });
+    </script>
+
+
+    <script>
+    $(window).load(function() {
+        $(".se-pre-con").fadeOut("slow");
+    });
+    </script>
+
+    <script type="text/javascript">
+        function showValue(newValue) {
+
+            var listItems = $('#result_listNear').children('li').remove();
+            listItems.each(function() {
+                if(this.id <= newValue) {
+                    $('#result_listNear').append(this);
+                }
+            });
+
+        }
+    </script>
+
+    <script>
+        function getUser() {
+            if(window.localStorage["username"] == null){
+                document.location.href = "login.html";
+            }
+            else {
+                window.plugins.toast.showShortBottom('Welcome ' + window.localStorage["username"],
+                        function(a){
+                            console.log('toast success: ' + a)
+                        },
+                        function(b){
+                            alert('toast error: ' + b)
+                        });
+                document.getElementById("userLoggedIn").innerHTML = "<li>Welcome, <b>" + window.localStorage["username"] + "</b></li>";
+            }
+        }
+    </script>
+
+
+</head>
+
+<body onload="getUser();">
+
+<div class="se-pre-con"></div>
+
+<script>
+    $(document).bind("mobileinit", function(){
+        $.mobile.allowCrossDomainPages = true;
+    });
+</script>
+
+
+<script>
+    $( document ).on( "pageinit", "#home", function() {
+        $( document ).on( "swipeleft swiperight", "#home", function( e ) {
+            if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+                if ( e.type === "swipeleft"  ) {
+                    $( "#menu" ).panel( "open" );
+                } else if ( e.type === "swiperight" ) {
+                    $( "#menu" ).panel( "open" );
+                }
+            }
+        });
+    });
+</script>
+
+<div data-role="page" id="home">
+
+    <div data-role="header" data-position="fixed">
+        <h1>Church Locator</h1>
+        <a href="#menu" class="ui-btn ui-btn-inline ui-icon-grid ui-btn-icon-left">Menu</a>
+    </div>
+
+    <div class="ui-content" role="main">
+
+        <a href="#dailyReadings" onclick="getOutput()"><div id="listMenuReadings">Daily Readings</div></a>
+        <a href="#listOfChurches"><div id="listMenuChurches">List of Churches</div></a>
+        <a href="#map" onclick="getLocation()"><div id="listMenuMap">Map</div></a>
+        <a href="#nearYou" class="disableUpdateButton"><div id="listMenuMass">Near You</div></a>
+        <a href="#pictures"><div id="listMenuPicture">Pictures</div></a>
+        <a href="#about"><div id="listMenuAbout">About</div></a>
+
+    </div>
+
+    <div data-role="panel" id="menu">
+        <p style="text-align: center;" id="userLoggedIn"></p>
+        <ul data-theme="a" data-role="listview" data-inset="true" class="ui-alt-icon">
+            <li><a href="#listOfChurches"><img src="img/icons/church.png" class="ui-li-icon">List of Churches</a></li>
+            <li><a href="#map"><img src="img/icons/map.png" class="ui-li-icon">Map</a></li>
+            <li><a href="#pictures"><img src="img/icons/camera.png" class="ui-li-icon">Pictures</a></li>
+            <li><a href="#about"><img src="img/icons/about.png" class="ui-li-icon">About</a></li>
+            <li><a href="" onclick="logOut();"><img src="img/icons/logOut.png" class="ui-li-icon">Log Out</a></li>
+            <li><a href="" onclick="exitFromApp();"><img src="img/icons/exit.png" class="ui-li-icon">Exit</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div data-role="page" id="dailyReadings">
+
+    <div data-role="header" data-position="fixed">
+        <h1>Daily Readings</h1><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Home </a>
+    </div>
+
+    <div id="readings" class="ui-content" role="main">
+
+        <div id="content_wrap">
+
+            <div id="content">
+                <div class="post" id="post-99">
+                    <h1>Today&#8217;s Mass Readings</h1>
+                    <div id="mass-entry" class="mass-entry">
+                        <p><script type="text/javascript">
+                        var now = new Date();
+                        var year = now.getFullYear();
+                        var day =now.getDate();
+                        var month = now.getMonth();
+                        month = month +1 ;
+                        var today_date = year + '-'  + month + '-' +  day;
+                        </script><br />
+
+                            <script src="http://mass-readings.actonbv.com/displayCode.php?reqdate=&amp;{today_date}&amp;m=j" type="text/javascript" charset="windows-1252"></script>
+
+                        </p>
+
+                    </div>
+                </div>
+
+            </div><!-- end content -->
+
+        </div>
+    </div>
+</div>
+
+<div data-role="page" id="pictures">
+
+    <div data-role="header" data-position="fixed">
+        <a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Home </a>
+        <h1>All Pictures</h1>
+    </div>
+
+    <div class="ui-content" role="main">
+        <button onclick="getAllPictures();">Show All Pictures</button>
+
+    </div>
+
+
+</div>
+
+<div data-role="page" id="listOfChurches">
+    <div data-role="header" data-position="fixed">
+        <h1>List of Churches</h1><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left enableAndClear" data-transition="slide" data-direction="reverse"> Home </a>
+    </div>
+
+    <div class="ui-content" role="main">
+
+       <button class="disable" onclick="getChurches();">Show All Churches</button>
+        <br/>
+
+        <div id="resultSet">
+            <form class="ui-filterable">
+                <input id="filter" data-type="search" placeholder="Search for Churches, Cities or Counties">
+            </form>
+            <ul id="result_list" data-filter="true" data-input="#filter" data-role="listview">
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<div data-role="page" id="churchDetailsFromMap">
+    <div data-role="header" data-position="fixed">
+        <h1>Church Details</h1>
+        <a href="#map" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Map </a>
+        <a href="#options1" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-right">Options</a>
+    </div>
+
+    <div class="ui-content" role="main">
+
+        <div id="myDiv1" class="background-image">
+
+        </div>
+        <div class="content" id="details1">
+            <h3 id="churchName1"></h3>
+            <p id="churchAddress1"></p>
+            <p id="churchCity1"></p>
+            <p id="churchCounty1"></p>
+            <p id="churchTelephone1"></p>
+            <p id="churchWeekdayMass1"></p>
+            <p id="churchWeekendMass1"></p>
+        </div>
+    </div>
+
+
+    <div data-role="panel" id="options1" data-position="right">
+        <ul data-role="listview" data-inset="true" class="ui-alt-icon">
+            <li data-role="list-divider">Navigation</li>
+            <li><a onclick="redirectToChurchMap()" href="#"><img src="img/icons/map1.png" class="ui-li-icon">Show on Map</a></li>
+
+            <li data-role="list-divider">Existing Pictures</li>
+            <li><a onclick="viewUploadedPictures()" href="#"><img src="img/icons/pictures.png" class="ui-li-icon">Pictures</a></li>
+
+            <li data-role="list-divider">New Picture</li>
+            <li><a onclick="takePicture()" href="#"><img src="img/icons/camera.png" class="ui-li-icon">From Camera</a></li>
+            <li><a onclick="getPicture()" href="#"><img src="img/icons/gallery.png" class="ui-li-icon">From Gallery</a></li>
+
+        </ul>
+    </div>
+
+</div>
+
+<div data-role="page" id="churchDetails">
+
+    <div data-role="header" data-position="fixed">
+        <h1>Church Details</h1>
+        <a href="#listOfChurches" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left" data-transition="slide" data-direction="reverse"> List </a>
+        <a href="#options" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-right">Options</a>
+    </div>
+
+
+
+    <div class="ui-content" role="main">
+
+        <div id="myDiv" class="background-image">
+
+        </div>
+            <div class="content" id="details">
+                    <h3 id="churchName"></h3>
+                    <p id="churchAddress"></p>
+                    <p id="churchCity"></p>
+                    <p id="churchCounty"></p>
+                    <p id="churchTelephone"></p>
+                    <p id="churchWeekdayMass"></p>
+                    <p id="churchWeekendMass"></p>
+            </div>
+    </div>
+
+
+
+    <div data-role="panel" id="options" data-position="right" data-display="reveal">
+        <ul data-role="listview" data-inset="true" class="ui-alt-icon">
+            <li data-role="list-divider">Navigation</li>
+            <li><a onclick="redirectToChurchMap()" href="#"><img src="img/icons/map1.png" class="ui-li-icon">Show on Map</a></li>
+
+            <li data-role="list-divider">Existing Pictures</li>
+            <li><a onclick="viewUploadedPictures()" href="#"><img src="img/icons/pictures.png" class="ui-li-icon">Pictures</a></li>
+
+            <li data-role="list-divider">New Picture</li>
+            <li><a onclick="takePicture()" href="#"><img src="img/icons/camera.png" class="ui-li-icon">From Camera</a></li>
+            <li><a onclick="getPicture()" href="#"><img src="img/icons/gallery.png" class="ui-li-icon">From Gallery</a></li>
+
+        </ul>
+    </div>
+
+</div>
+
+<div data-role="page" id="mapWithChurch">
+
+    <div data-role="header" data-position="fixed">
+        <h1>Map</h1><a href="#churchDetails" onclick="clearWatch1()" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Details </a>
+    </div>
+
+    <div class="ui-content" role="main" id="map_canvas1"> <!-- Map goes here --> </div>
+
+</div>
+
+
+<div data-role="page" id="map">
+
+    <div data-role="header" data-position="fixed">
+        <h1>Map</h1><a href="#home" onclick="clearWatch1()" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Home </a>
+    </div>
+
+    <div class="ui-content" role="main" id="map_canvas">
+
+        <br /><br /><br />
+
+    </div>
+
+</div>
+
+
+<div data-role="page" id="nearYou">
+
+    <div data-role="panel" id="pagePanel" data-position="right" data-display="overlay">
+        <div id="details2">
+            <div>
+                <div id="churchDetail2">
+                    <h3 id="churchName2"></h3>
+                    <p id="churchAddress2"></p>
+                    <p id="churchCity2"></p>
+                    <p id="churchCounty2"></p>
+                    <p id="churchTelephone2"></p>
+                    <p id="churchWeekdayMass2"></p>
+                    <p id="churchWeekendMass2"></p>
+                </div>
+            </div>
+        </div>
+        <center>
+            <a href="#" onclick="setNotification();" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left">Set Notification</a>
+            <a href="#" onclick="setNotification();"data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-b ui-icon-location ui-btn-icon-left">Show on Map</a>
+            <a href="#nearYou" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left">Close</a>
+        </center>
+    </div>
+
+    <div data-role="header" data-position="fixed">
+        <h1>Masses Near You</h1><a href="#home" onclick="clearWatch1()" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left enableAndClear" data-transition="slide" data-direction="reverse"> Home </a>
+    </div>
+
+    <br />
+    <button class="disable" onclick="getNearMass(slider1.value);">Get Near Masses</button>
+
+    <div id="resultSetNear">
+        <!--<form class="ui-filterable">
+            <input id="filterNear" data-type="search" placeholder="Search for Churches">
+        </form>-->
+
+        <center><button id="updateResultsSlider" class="ui-btn ui-btn-inline updateResultsSlider" onclick="getNearMass(slider1.value);">Update Results</button></center>
+        <input type="range" name="slider1" id="slider1" value="10" min="1" max="100" class="ui-btn-inline" data-highlight="true" />
+
+
+        <ul id="result_listNear" data-filter="true" data-input="#filter" data-role="listview">
+        </ul>
+    </div>
+
+</div>
+
+
+<div data-role="page" id="about">
+
+    <div data-role="header" data-position="fixed">
+        <h1>About</h1><a href="#home"  class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Home </a>
+    </div>
+
+    <div class="ui-content" role="main">
+        <p>Being developed ...</p>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="../platform/js/libs/cordova.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="lib/handlebars/js/handlebars-v1.3.0.js"></script>
+<script type="text/javascript" src="js/MobileServices.Web-1.2.5.js"></script>
+
+</body>
+</html>

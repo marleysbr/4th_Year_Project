@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.marleysbr.TestApp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" onload="true" value="org.apache.cordova.statusbar.StatusBar" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+    </feature>
+    <feature name="CallPhone">
+        <param name="android-package" value="mobi.roshka.cordova.callphone.CallPhone" />
+    </feature>
+    <feature name="Calendar">
+        <param name="android-package" value="nl.xservices.plugins.Calendar" />
+    </feature>
+    <feature name="Toast">
+        <param name="android-package" value="nl.xservices.plugins.Toast" />
+    </feature>
+    <icon height="80" src="www/img/logo.png" width="80" />
+    <name>Church Locator</name>
+    <description>
+        An app that locates Churches.
+    </description>
+    <author email="marleysbr@gmail.com" href="http://facebook.com/marleyscr10">
+        Marleys
+    </author>
+    <content src="login.html" />
+    <access origin="*" />
+    <access origin="http://31.170.160.87*" />
+    <access launch-external="yes" origin="tel:*" />
+    <access origin="http://www.churchfinderireland.com//" subdomains="true" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#595b5b" />
+</widget>

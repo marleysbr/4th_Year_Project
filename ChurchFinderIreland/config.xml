@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.marleysbr.TestApp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+    <name>Church Locator</name>
+    <description>
+        An app that locates Churches.
+    </description>
+    <author email="marleysbr@gmail.com" href="http://facebook.com/marleyscr10">
+        Marleys
+    </author>
+
+    <content src="login.html" />
+    <access origin="*" />
+    <access origin="http://31.170.160.87*" />
+    <access origin="tel:*" launch-external="yes" />
+    <access origin="http://www.churchfinderireland.com//" subdomains="true" />
+
+    <!-- uses cordova plugin add org.apache.cordova.statusbar to make iOS7 statusbar look right-->
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <!-- edit this to the background color of your app -->
+    <preference name="StatusBarBackgroundColor" value="#595b5b" />
+
+    <platform name="android">
+        <icon src="www/img/logo.png" width="80" height="80" />
+    </platform>
+
+</widget>

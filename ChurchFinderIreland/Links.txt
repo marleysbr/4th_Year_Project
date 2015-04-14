@@ -1,0 +1,44 @@
+Links
+
+How to upload file with Phonegap and JqueryMobile?
+http://stackoverflow.com/questions/13861310/how-to-upload-file-with-phonegap-and-jquerymobile/13862151#13862151
+
+want to upload a pic to the server using phonegap in android
+http://stackoverflow.com/questions/17445840/want-to-upload-a-pic-to-the-server-using-phonegap-in-android
+
+Capturing and Uploading Photos on iOS with PhoneGap (Cordova)
+http://metabates.com/2012/04/15/capturing-and-uploading-photos-on-ios-with-phonegap/
+
+Upload a Picture using PhoneGap on Android
+https://www.ibm.com/developerworks/community/blogs/94e7fded-7162-445e-8ceb-97a2140866a9/entry/upload_a_picture_using_phonegap_on_android8?lang=en
+
+PhoneGap 7 - Using Device Functions - Uploading Pictures To A Server
+https://www.youtube.com/watch?v=2EjXEfTMHp0
+
+Phonegap tutorials
+https://www.youtube.com/channel/UCgKJ5U8Ryp-HUwsddvB1lQQ
+
+Camera API
+https://www.youtube.com/watch?v=H3lNDQN1g5E
+
+Add Database Phonegap
+https://www.google.ie/search?q=add+database+phonegap&rlz=1C1CHWA_enIE604IE604&oq=add+database+phonegap&aqs=chrome..69i57j0l3.7470j0j4&sourceid=chrome&es_sm=122&ie=UTF-8
+
+Phonegap: How to Integrate Database in Android using Phonegap 3 - Tutorial 7
+https://www.youtube.com/watch?v=NCIdKSeRD-E
+
+Server for upload:
+http://31.170.160.101/root/public_html/upload.php
+
+Database - Cordova
+https://iphonedevlog.wordpress.com/2014/03/28/populate-your-phonegap-app-with-data-from-an-external-server-db/
+
+Database - PHP - Cordova
+http://www.jqwidgets.com/jquery-widgets-documentation/documentation/phpintegration/bind-jquery-dropdownlist-to-mysql-database-using-php.htm
+
+Loading Data into Phonegap
+http://samcroft.co.uk/2010/loading-data-into-a-phonegap-app/
+
+SwipeBox
+http://expressionengine.aspcode.net/ppst/63547278635127715528292/display-image-gallery-on-clicking-separate-image-using-matrix
+https://github.com/brutaldesign/swipebox
