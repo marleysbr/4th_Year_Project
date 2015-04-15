@@ -4059,7 +4059,7 @@
         // This implementation conforms to Promises/A+, making it compatible with WinJS.Promise.
         
         // Note: There is a standard Promises/A+ test suite, to which this implementation conforms.
-        // See test\Microsoft.Azure.Zumo.Web.Test\promiseTests
+        // See test\Microsoft.Azure.Zumo.Web.ChurchFinderIreland\promiseTests
         
         // Declare JSHint globals
         /*global setTimeout:false */

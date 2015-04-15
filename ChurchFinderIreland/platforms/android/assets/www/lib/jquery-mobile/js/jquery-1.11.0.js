@@ -3737,7 +3737,7 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ) {
 		// First Try to find as-is property data
 		ret = thisCache[ name ];
 
-		// Test for null|undefined property data
+		// ChurchFinderIreland for null|undefined property data
 		if ( ret == null ) {
 
 			// Try to find the camelCased property
@@ -6067,7 +6067,7 @@ function defaultDisplay( nodeName ) {
 		if ( shrinkWrapBlocksVal == null ) {
 			body = document.getElementsByTagName( "body" )[ 0 ];
 			if ( !body ) {
-				// Test fired too early or in an unsupported environment, exit.
+				// ChurchFinderIreland fired too early or in an unsupported environment, exit.
 				return;
 			}
 
@@ -6351,7 +6351,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 			if ( reliableMarginRightVal == null && window.getComputedStyle ) {
 				body = document.getElementsByTagName( "body" )[ 0 ];
 				if ( !body ) {
-					// Test fired too early or in an unsupported environment, exit.
+					// ChurchFinderIreland fired too early or in an unsupported environment, exit.
 					return;
 				}
 
@@ -6385,7 +6385,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 			body = document.getElementsByTagName( "body" )[ 0 ];
 
 		if ( !body ) {
-			// Test fired too early or in an unsupported environment, exit.
+			// ChurchFinderIreland fired too early or in an unsupported environment, exit.
 			return;
 		}
 
@@ -7705,7 +7705,7 @@ jQuery.fn.delay = function( time, type ) {
 
 	a.style.cssText = "top:1px";
 
-	// Test setAttribute on camelCase class. If it works, we need attrFixes when doing get/setAttribute (ie6/7)
+	// ChurchFinderIreland setAttribute on camelCase class. If it works, we need attrFixes when doing get/setAttribute (ie6/7)
 	support.getSetAttribute = div.className !== "t";
 
 	// Get the style information from getAttribute

@@ -1864,7 +1864,7 @@ $.mobile.widget = $.Widget;
 
 (function( $, undefined ) {
 
-	/*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas. Dual MIT/BSD license */
+	/*! matchMedia() polyfill - ChurchFinderIreland a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas. Dual MIT/BSD license */
 	window.matchMedia = window.matchMedia || (function( doc, undefined ) {
 
 		
@@ -2026,7 +2026,7 @@ function transform3dTest() {
 	return ( !!ret && ret !== "none" );
 }
 
-// Test for dynamic-updating base tag support ( allows us to avoid href,src attr rewriting )
+// ChurchFinderIreland for dynamic-updating base tag support ( allows us to avoid href,src attr rewriting )
 function baseTagTest() {
 	var fauxBase = location.protocol + "//" + location.host + location.pathname + "ui-dir/",
 		base = $( "head base" ),

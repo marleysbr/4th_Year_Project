@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 
-    <title>Church Locator</title>
+    <title>Church Finder Ireland</title>
 
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.0.min.css" />
@@ -29,6 +29,51 @@
     <!--<script src="lib/jquery-2.1.3.js"></script>-->
     <script src="js/jquery.swipebox.js"></script>
     <script src="lib/modernizr.js"></script>
+
+    <script>
+        function universalisCallback(data)
+        {
+            if (data.Mass_R1.source) document.getElementById("R1Source").innerHTML=data.Mass_R1.source;
+            if (data.Mass_R1.text) document.getElementById("R1Text").innerHTML=data.Mass_R1.text;
+
+            if (data.Mass_Ps.source) document.getElementById("PsSource").innerHTML=data.Mass_Ps.source;
+            if (data.Mass_Ps.text) document.getElementById("PsText").innerHTML=data.Mass_Ps.text;
+
+            var today = new Date();
+            if(today.getDay() == 0) {
+                if (data.Mass_R2.source) document.getElementById("R1Source").innerHTML=data.Mass_R2.source;
+                if (data.Mass_R2.text) document.getElementById("R1Text").innerHTML=data.Mass_R2.text;
+            }
+
+            if (data.Mass_G.source) document.getElementById("GospelSource").innerHTML=data.Mass_G.source;
+            if (data.Mass_G.text) document.getElementById("GospelText").innerHTML=data.Mass_G.text;
+
+            if (data.day) document.getElementById("DayDescription").innerHTML=data.day;
+            if (data.copyright) document.getElementById("Copyright").innerHTML=data.copyright;
+        }
+
+        function listOfKeys(data)
+        {var x="";
+            for (var thing in data)
+            {x = x + "\n" + thing;
+                var d=data[thing];
+                if (typeof d=="object")
+                {for (var t in d)
+                    x = x + "\n" + thing+"."+t ;
+                }
+                else
+                    x = x;
+            }
+            return x;
+        };
+    </script>
+
+    <!--
+       This is the script that makes it all work. It retrieves the data from Universalis
+        and calls the universalisCallback function.
+       -->
+    <script src="http://www.universalis.com/Europe.England/jsonpmass.js?callback=universalisCallback" type="text/javascript" defer="defer"></script>
+
 
     <script>
         $( document ).ready(function() {
@@ -175,31 +220,39 @@
 
     <div id="readings" class="ui-content" role="main">
 
-        <div id="content_wrap">
+        <div data-role="tabs" id="tabs">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#one" data-ajax="false">1st Reading</a></li>
+                    <li><a href="#two" data-ajax="false">Psalms</a></li>
+                    <li><a href="#three" data-ajax="false">2nd Reading</a></li>
+                    <li><a href="#four" data-ajax="false">Gospel</a></li>
+                </ul>
+            </div>
 
-            <div id="content">
-                <div class="post" id="post-99">
-                    <h1>Today&#8217;s Mass Readings</h1>
-                    <div id="mass-entry" class="mass-entry">
-                        <p><script type="text/javascript">
-                        var now = new Date();
-                        var year = now.getFullYear();
-                        var day =now.getDate();
-                        var month = now.getMonth();
-                        month = month +1 ;
-                        var today_date = year + '-'  + month + '-' +  day;
-                        </script><br />
-
-                            <script src="http://mass-readings.actonbv.com/displayCode.php?reqdate=&amp;{today_date}&amp;m=j" type="text/javascript" charset="windows-1252"></script>
-
-                        </p>
-
-                    </div>
+            <div id="mass-entry" class="tab-content">
+                <div class="tab-pane fade active in" id="one">
+                    <h4><p id="R1Source"></p></h4>
+                    <p id="R1Text"></p>
                 </div>
+                <div class="tab-pane fade" id="two">
+                    <h4><p id="PsSource"></p></h4>
+                    <p id="PsText"></p>
+                </div>
+                <div class="tab-pane fade" id="three">
+                    <h4><p id="R2Source">No Readings Available for today...</p></h4>
+                    <p id="R2Text"></p>
+                </div>
+                <div class="tab-pane fade" id="four">
+                    <h4><p id="GospelSource"></p></h4>
+                    <p id="GospelText"></p>
+                </div>
+            </div>
 
-            </div><!-- end content -->
+            <div><p id="Copyright"></p></div>
 
-        </div>
+    </div>
+
     </div>
 </div>
 
