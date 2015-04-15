@@ -208,3 +208,29 @@ function clearWatch1() {
         watchID = null;
     }
 }
+
+function viewAllPictures() {
+    if (window.XMLHttpRequest) {  // code for IE7+, Firefox, Chrome, Opera, Safari
+        var xmlhttp = new XMLHttpRequest();
+    }
+    else {  // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.async = false;
+    xmlhttp.open("GET", "http://www.churchfinderireland.com/getAllPictures.php", false);
+    xmlhttp.send();
+    var xmlDoc = xmlhttp.responseXML;
+
+    var churchLength = xmlDoc.getElementsByTagName("Image").length;
+    var images_array = [];
+
+    for(i = 0; i < churchLength; i++) {
+        var imageID = xmlDoc.getElementsByTagName("imageID")[i].childNodes[0].nodeValue;
+        var churchID = xmlDoc.getElementsByTagName("churchID")[i].childNodes[0].nodeValue;
+        var churchName = xmlDoc.getElementsByTagName("churchName")[i].childNodes[0].nodeValue;
+        var filePath = xmlDoc.getElementsByTagName("filePath")[i].childNodes[0].nodeValue;
+        images_array.push({href: filePath, title: churchName});
+    }
+
+    $.swipebox(images_array);
+}
