@@ -17,6 +17,52 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+
+    <script>
+        function universalisCallback(data)
+        {
+            if (data.Mass_R1.source) document.getElementById("R1Source").innerHTML=data.Mass_R1.source;
+            if (data.Mass_R1.text) document.getElementById("R1Text").innerHTML=data.Mass_R1.text;
+
+            if (data.Mass_Ps.source) document.getElementById("PsSource").innerHTML=data.Mass_Ps.source;
+            if (data.Mass_Ps.text) document.getElementById("PsText").innerHTML=data.Mass_Ps.text;
+
+            var today = new Date();
+            if(today.getDay() == 0) {
+                if (data.Mass_R2.source) document.getElementById("R1Source").innerHTML=data.Mass_R2.source;
+                if (data.Mass_R2.text) document.getElementById("R1Text").innerHTML=data.Mass_R2.text;
+            }
+
+            if (data.Mass_G.source) document.getElementById("GospelSource").innerHTML=data.Mass_G.source;
+            if (data.Mass_G.text) document.getElementById("GospelText").innerHTML=data.Mass_G.text;
+
+            if (data.day) document.getElementById("DayDescription").innerHTML=data.day;
+            if (data.copyright) document.getElementById("Copyright").innerHTML=data.copyright;
+        }
+
+        function listOfKeys(data)
+        {var x="";
+            for (var thing in data)
+            {x = x + "\n" + thing;
+                var d=data[thing];
+                if (typeof d=="object")
+                {for (var t in d)
+                    x = x + "\n" + thing+"."+t ;
+                }
+                else
+                    x = x;
+            }
+            return x;
+        };
+    </script>
+
+    <!--
+       This is the script that makes it all work. It retrieves the data from Universalis
+        and calls the universalisCallback function.
+       -->
+    <script src="http://www.universalis.com/Europe.England/jsonpmass.js?callback=universalisCallback" type="text/javascript" defer="defer"></script>
+
 
 </head>
 
@@ -149,6 +195,57 @@
             </div>
         </div>
         <!-- /.row -->
+
+        <!-- Service Tabs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Daily Readings
+                    <small><p id="DayDescription"></p></small>
+                </h2>
+            </div>
+            <div class="col-lg-12">
+
+                <ul id="myTab" class="nav nav-tabs nav-justified">
+                    <li class="active"><a href="#service-one" data-toggle="tab"><i class="fa fa-tree"></i> First Reading</a></li>
+                    <li class=""><a href="#service-two" data-toggle="tab"><i class="fa fa-car"></i> Psalm</a></li>
+                    <li class=""><a href="#service-three" data-toggle="tab"><i class="fa fa-support"></i> Second Reading</a></li>
+                    <li class=""><a href="#service-four" data-toggle="tab"><i class="fa fa-database"></i> Gospel</a></li>
+                </ul>
+
+                <div id="mass-entry" class="tab-content">
+                    <div class="tab-pane fade active in" id="service-one">
+                        <h4><p id="R1Source"></p></h4>
+                        <p id="R1Text"></p>
+                    </div>
+                    <div class="tab-pane fade" id="service-two">
+                        <h4><p id="PsSource"></p></h4>
+                        <p id="PsText"></p>
+                    </div>
+                    <div class="tab-pane fade" id="service-three">
+                        <h4><p id="R2Source"></p></h4>
+                        <p id="R2Text"></p>
+                    </div>
+                    <div class="tab-pane fade" id="service-four">
+                        <h4><p id="GospelSource"></p></h4>
+                        <p id="GospelText"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <p id="Copyright"></p>
+
+        <!-- CUSTOMISATION:
+             Whatever text your HTML element originally contained will be replaced with the text which comes from Universalis.
+             This is a useful thing to know, because it lets you deal with the case when text does NOT come from Universalis, which may be because:
+              - The user does not have Javascript enabled.
+              - The user's browser cannot connect to the Universalis site.
+             In these cases, whatever text your HTML element originally contained will remain unchanged.
+             In the example here, this means that the user will see an explicit link to the Universalis page.
+             -->
+
+        <p >
 
         <!-- Footer -->
         <footer>
