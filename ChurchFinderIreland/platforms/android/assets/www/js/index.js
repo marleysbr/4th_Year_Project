@@ -9,6 +9,9 @@ appomat.app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('deviceready', calendar_events, false);
+        document.addEventListener("backbutton", onBackKeyDown, false);
+
     },
 
     onDeviceReady: function() {
@@ -18,6 +21,10 @@ appomat.app = {
     }
 
 };
+
+function onBackKeyDown(e) {
+    e.preventDefault();
+}
 
 function exitFromApp() {
     navigator.app.exitApp();
@@ -647,4 +654,29 @@ function clearWatch1() {
 
 function setNotification() {
     alert("Being developed ...")
+}
+
+function calendar_events(){
+
+    var loc = document.getElementById("churchName2").innerHTML
+    var add = document.getElementById("churchAddress2").innerHTML.slice(26)+ ", " +document.getElementById('churchCity2').innerHTML.slice(23)
+        + ", " +document.getElementById('churchCounty2').innerHTML.slice(25);
+
+    var todaysDate = new Date();
+    var year = todaysDate.getFullYear();
+    var month = todaysDate.getMonth();
+    var day = todaysDate.getDate();
+    var hour = todaysDate.getHours();
+    var mins = todaysDate.getMinutes();
+
+    var startDate = new Date(year,month,day,hour,mins,0,0);
+    var endDate = new Date(year,month,day,hour,mins,0,0);
+    var title = "Mass @ " + loc;
+    var location = add;
+    var notes = "Mass alert!";
+    var success = function(message) { alert("Success: Calendar Event Created" ); };
+    var error = function(message) { alert("Error: " + message); };
+
+    window.plugins.calendar.createEventInteractively(title,location,notes,startDate,endDate,success,error);
+
 }

@@ -89,6 +89,7 @@
                 $("#result_list").empty();
                 $(".disable").prop("disabled", false);
                 $(".disable").show();
+                google.maps.event.clearInstanceListeners(document);
             });
 
             $('.disableUpdateButton').click(function(){
@@ -149,6 +150,20 @@
                         });
                 document.getElementById("userLoggedIn").innerHTML = "<li>Welcome, <b>" + window.localStorage["username"] + "</b></li>";
             }
+
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+        }
+    </script>
+
+    <script>
+        function onDeviceReady() {
+            // Register the event listener
+            document.addEventListener("backbutton", onBackKeyDown, false);
+        }
+
+        function onBackKeyDown(e) {
+            e.preventDefault();
         }
     </script>
 
@@ -193,7 +208,7 @@
         <a href="#listOfChurches"><div id="listMenuChurches">List of Churches</div></a>
         <a href="#map" onclick="getLocation()"><div id="listMenuMap">Map</div></a>
         <a href="#nearYou" class="disableUpdateButton"><div id="listMenuMass">Near You</div></a>
-        <a href="#pictures"><div id="listMenuPicture">Pictures</div></a>
+        <a href="#" onclick="getAllPictures();"><div id="listMenuPicture">Show All Pictures</div></a>
         <a href="#about"><div id="listMenuAbout">About</div></a>
 
     </div>
@@ -201,10 +216,10 @@
     <div data-role="panel" id="menu">
         <p style="text-align: center;" id="userLoggedIn"></p>
         <ul data-theme="a" data-role="listview" data-inset="true" class="ui-alt-icon">
-            <li><a href="#listOfChurches"><img src="img/icons/church.png" class="ui-li-icon">List of Churches</a></li>
-            <li><a href="#map"><img src="img/icons/map.png" class="ui-li-icon">Map</a></li>
-            <li><a href="#pictures"><img src="img/icons/camera.png" class="ui-li-icon">Pictures</a></li>
-            <li><a href="#about"><img src="img/icons/about.png" class="ui-li-icon">About</a></li>
+            <li><a class="ui-btn ui-btn-inline ui-icon-info ui-btn-icon-left" href="#about">About</a></li>
+            <li><a class="ui-btn ui-btn-inline ui-icon-check ui-btn-icon-left" href="#faq">FAQ</a></li>
+            <li><a class="ui-btn ui-btn-inline ui-icon-refresh ui-btn-icon-left" href="#" onclick="window.open('http://www.churchfinderireland.com', '_system');">Visit Website</a></li>
+            <li data-role="list-divider"></li>
             <li><a href="" onclick="logOut();"><img src="img/icons/logOut.png" class="ui-li-icon">Log Out</a></li>
             <li><a href="" onclick="exitFromApp();"><img src="img/icons/exit.png" class="ui-li-icon">Exit</a></li>
         </ul>
@@ -254,21 +269,6 @@
     </div>
 
     </div>
-</div>
-
-<div data-role="page" id="pictures">
-
-    <div data-role="header" data-position="fixed">
-        <a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Home </a>
-        <h1>All Pictures</h1>
-    </div>
-
-    <div class="ui-content" role="main">
-        <button onclick="getAllPictures();">Show All Pictures</button>
-
-    </div>
-
-
 </div>
 
 <div data-role="page" id="listOfChurches">
@@ -382,7 +382,7 @@
 <div data-role="page" id="mapWithChurch">
 
     <div data-role="header" data-position="fixed">
-        <h1>Map</h1><a href="#churchDetails" onclick="clearWatch1()" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Details </a>
+        <h1>Map</h1><a href="#home" onclick="clearWatch1()" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left enableAndClear" data-transition="slide" data-direction="reverse"> Home </a>
     </div>
 
     <div class="ui-content" role="main" id="map_canvas1"> <!-- Map goes here --> </div>
@@ -422,8 +422,8 @@
             </div>
         </div>
         <center>
-            <a href="#" onclick="setNotification();" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left">Set Notification</a>
-            <a href="#" onclick="setNotification();"data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-b ui-icon-location ui-btn-icon-left">Show on Map</a>
+            <a href="#" onclick="calendar_events();" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left">Set Notification</a>
+            <a href="#" onclick="redirectToChurchMap();"data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-b ui-icon-location ui-btn-icon-left">Get Directions</a>
             <a href="#nearYou" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left">Close</a>
         </center>
     </div>
@@ -450,6 +450,17 @@
 
 </div>
 
+<div data-role="page" id="faq">
+
+    <div data-role="header" data-position="fixed">
+        <h1>FAQ</h1><a href="#home"  class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left" data-transition="slide" data-direction="reverse"> Home </a>
+    </div>
+
+    <div class="ui-content" role="main">
+        <p>Being developed ...</p>
+    </div>
+
+</div>
 
 <div data-role="page" id="about">
 

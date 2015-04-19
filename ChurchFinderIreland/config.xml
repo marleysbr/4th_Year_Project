@@ -24,4 +24,8 @@
         <icon src="www/img/logo.png" width="80" height="80" />
     </platform>
 
+    <feature name="Calendar">
+        <param name="android-package" value="nl.xservices.plugins.Calendar" />
+    </feature>
+
 </widget>
