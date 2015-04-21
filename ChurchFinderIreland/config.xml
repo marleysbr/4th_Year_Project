@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.marleysbr.TestApp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
-    <name>Church Locator</name>
+    <name>Church Finder</name>
     <description>
-        An app that locates Churches.
+        This app was developed to help tourists and locals to locate Churches around Ireland.
+        It can also be used as an unique Social Network by adding pictures and comments.
     </description>
     <author email="marleysbr@gmail.com" href="http://facebook.com/marleyscr10">
         Marleys
