@@ -33,9 +33,10 @@
         <param name="android-package" value="nl.xservices.plugins.Toast" />
     </feature>
     <icon height="80" src="www/img/logo.png" width="80" />
-    <name>Church Locator</name>
+    <name>Church Finder</name>
     <description>
-        An app that locates Churches.
+        This app was developed to help tourists and locals to locate Churches around Ireland.
+        It can also be used as an unique Social Network by adding pictures and comments.
     </description>
     <author email="marleysbr@gmail.com" href="http://facebook.com/marleyscr10">
         Marleys
